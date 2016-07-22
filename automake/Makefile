@@ -11,6 +11,6 @@ CFLAGS := -g -Wall
 OBJ := hello
 SRC := hello.c
 $(OBJ): $(SRC)
-  $(CC) $(LDFLAGS) -o $(OBJ) $(SRC) $(LDLIBS)
+	$(CC) $(LDFLAGS) -o $(OBJ) $(SRC) $(LDLIBS)
 clean:
-  rm -f $(OBJ)
+	rm -f $(OBJ)
