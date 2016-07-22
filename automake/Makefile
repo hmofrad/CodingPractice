@@ -3,7 +3,7 @@
 # File: Makefile
 # Author: Mohammad H. Mofrad
 # Email: hasanzadeh@cs.pitt.edu
-# Date: July 2016; Last revision 07-21-2016
+# Date: July 2016; Last revision 07-22-2016
 # Copyright (C) Mohammad H. Mofrad - All Rights Reserved
 
 CC := gcc
