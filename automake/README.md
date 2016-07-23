@@ -21,3 +21,4 @@ chmod +x automake.sh
 <p>Hello, World!</p>
 # Extending the hello world example
 <p>If you want to extend the hello.c example. Don't forget to make proper changes to the Makefile</p>
+<p>One can pass arguments to automake by wrapping src or cmd with double quotes e.g. "hello arg1 arg2 ..."</p>
