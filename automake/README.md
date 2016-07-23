@@ -10,7 +10,7 @@ chmod +x automake.sh
 <p><b>dst</b> is the name of output binary executable</p>
 <p><b>cmd</b> is the make or any compiling tool command for compiling the source C program</p>
 <p><b>secs</b> is the time interval to look for any change in the source C program</p>
-<p>Automake does not create a background process; you should open two terminals simultaneously. Run automake in one terminal and edit your C file in the other one</p>
+<p>Automake works in foreground; one suggestion for debugging is that you could open two terminal windows. Run automake in one terminal and try editing your C file in the other one</p>
 # Hello world example
 ## Sample command
 <p>./automake.sh hello.c hello make 2</p>
