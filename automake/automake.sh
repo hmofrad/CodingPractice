@@ -33,6 +33,9 @@ echo "Destination binary file: $bin"
 echo "Command to execute:      $cmd"
 echo "Referesh interval:       $sec"
 
+$cmd
+./$bin
+
 while true; do
     t0=`stat --format %Z $src`
          sleep $sec
