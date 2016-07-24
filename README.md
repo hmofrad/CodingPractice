@@ -1,3 +1,3 @@
 # etc
-Some useful scripts
-#### Automake Compile On Write (ACOW)
+Some useful development scripts for Linux and C
+#### 1. Automake Compile On Write (ACOW)
