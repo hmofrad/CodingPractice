@@ -1,2 +1,2 @@
 # Coccinelle
-A script for Parallel execution of coccinelle @ https://github.com/coccinelle/coccinelle
+A script for Parallel execution of <a href="https://github.com/coccinelle/coccinelle"  target="_blank">coccinelle</a>.
