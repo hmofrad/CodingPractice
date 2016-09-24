@@ -2,7 +2,12 @@
 # (C) 2016 Mohammad H. Mofrad <hasanzadeh@cs.pitt.edu>
 # Originally downloaded from "https://outflux.net/coccinelle/"
 # and modified to save the generated patch file
-# RUN: ./para_spatch.sh --sp-file rule.cocci --dir ~/linux-X.Y.Z  > patch-file
+# RUN: ./para_spatch.sh --sp-file RULE.cocci --dir ~/DIR [ > PATCH]
+
+if [ "$#" -ne 4 ]; then
+    echo "Usage $#: $0 --sp-file RULE.cocci --dir ~/DIR [ > PATCH]"
+    exit
+fi
 
 MAX=$(nproc)
 dir=$(mktemp -d)
