@@ -4,8 +4,7 @@
 # and modified to save the generated patch file
 # RUN: ./para_spatch.sh --sp-file rule.cocci --dir ~/linux-X.Y.Z  > patch-file
 
-set -e
-MAX=$(getconf _NPROCESSORS_ONLN)
+MAX=$(nproc)
 dir=$(mktemp -d)
 
 for i in $(seq 0 $(( MAX - 1)) ); do
