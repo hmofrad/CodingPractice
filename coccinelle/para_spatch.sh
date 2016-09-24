@@ -1,5 +1,5 @@
 #!/bin/bash
-# (C) Mohammad H. Mofrad <hasanzadeh@cs.pitt.edu>
+# (C) 2016 Mohammad H. Mofrad <hasanzadeh@cs.pitt.edu>
 # Originally downloaded from "https://outflux.net/coccinelle/"
 # and modified to save the generated patch file
 # RUN: ./para_spatch.sh --sp-file rule.cocci --dir ~/linux-X.Y.Z  > patch-file
