@@ -36,7 +36,7 @@ void bucketsort(int arr[], int len)
    }
    
    int j = 0;
-   for(i = 0; i < max+1; i++)
+   for(i = 0; i < max + 1; i++)
    {
       printf("bucket[%2d] = %2d\n", i, bucket[i]);
       if(bucket[i])
