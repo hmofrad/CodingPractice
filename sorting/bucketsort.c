@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define length(x) (sizeof(x)/sizeof(x[0])) //Only compatible with arrays
+#define length(x) (sizeof(x)/sizeof(x[0])) //Only works with arrays
 
 void bucketsort(int arr[], int len)
 {
