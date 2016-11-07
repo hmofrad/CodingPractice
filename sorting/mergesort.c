@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define length(x) (sizeof(x)/sizeof(x[0])) //Only compatible with arrays
+#define length(x) (sizeof(x)/sizeof(x[0])) //Only works with arrays
 
 void merge(int arr[], int l, int m, int r)
 {
@@ -65,9 +65,6 @@ void merge(int arr[], int l, int m, int r)
       j++;
       k++;
    }
-
-
-
 }
 
 void merge_sort(int arr[], int l, int r)
@@ -82,7 +79,6 @@ void merge_sort(int arr[], int l, int r)
       merge(arr, l, m, r);
    }
 }
-
 
 int main(int argc, char *argv[])
 {
@@ -104,7 +100,6 @@ int main(int argc, char *argv[])
        printf("%d ", arr[i]);
    }
    printf("\n");
-
 
    return(0);
 }
