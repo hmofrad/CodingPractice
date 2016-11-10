@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define length(x) (sizeof(x) / sizeof(x[0]))
+#define length(x) (sizeof(x) / sizeof(x[0])) // Only works with arrays
 
 void insertionsort(int arr[], int len)
 {
