@@ -75,7 +75,7 @@ void replace(char str[], int left, int middle, int right)
 void reverse(char str[], int left, int right)
 {
     int middle = left + (right - left) / 2;
-    printf("%d, %d, %d\n", left, middle, right);
+//    printf("%d, %d, %d\n", left, middle, right);
     if(left < right)
     {
        reverse(str, left, middle);
