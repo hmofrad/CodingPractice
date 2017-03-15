@@ -1,6 +1,6 @@
 /*
   * Reserve String implementation in C
-  * (c) Mohammad H. Mofrad
+  * (c) Mohammad H. Mofrad, 2017
   * (e) hasanzadeh@cs.pitt.edu
   * Compile and run using "gcc -o ReverseString ReverseString.c && ./ReverseString"
    */  
