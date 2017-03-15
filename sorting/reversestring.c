@@ -22,6 +22,18 @@ int main(int argc, char *argv[])
    return(0);
 }
 
+void reverse(char str[], int left, int right)
+{
+    int middle = left + (right - left) / 2;
+//    printf("%d, %d, %d\n", left, middle, right);
+    if(left < right)
+    {
+       reverse(str, left, middle);
+       reverse(str, middle+1, right);
+       replace(str, left, middle, right);
+    }
+}
+
 void replace(char str[], int left, int middle, int right)
 {
    printf("\nInput String: %s\n", str);
@@ -63,23 +75,11 @@ void replace(char str[], int left, int middle, int right)
       i++;
       k++;
    }
-      while(j < n1)
+   while(j < n1)
    {
       str[k] = L[j];
       j++;
       k++;
    }
    printf("Output String: %s\n", str);
-}
-
-void reverse(char str[], int left, int right)
-{
-    int middle = left + (right - left) / 2;
-//    printf("%d, %d, %d\n", left, middle, right);
-    if(left < right)
-    {
-       reverse(str, left, middle);
-       reverse(str, middle+1, right);
-       replace(str, left, middle, right);
-    }
 }
