@@ -2,6 +2,9 @@
 <p>Mantevo HPC benchmark</p>
 <p>Installation script for MPI/OpenMP implementations of CloverLeaf, CoMD, and miniFE mini apps of Mantevo benchmark.</p>
 
+## requirements (partial)
+<p>openmpi, openmpi-devel</p>
+
 ## Install & Run
 <p>chmod +x install.sh && ./install.sh</p>
 
