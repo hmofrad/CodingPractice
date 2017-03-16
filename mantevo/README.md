@@ -3,7 +3,11 @@
 <p>Installation script for MPI/OpenMP implementations of CloverLeaf, CoMD, and miniFE mini apps of Mantevo benchmark.</p>
 
 ## requirements (incomplete)
-<p>openmpi, openmpi-devel</p>
+* gcc
+* gfortran
+* mpicc
+* openmpi
+* openmpi-devel
 
 ## Install & Run
 <p>chmod +x install.sh && ./install.sh</p>
