@@ -10,7 +10,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 int* twoSum(int* nums, int numsSize, int target) {
     int i = 0;
     int j = 0;
@@ -28,10 +27,12 @@ int* twoSum(int* nums, int numsSize, int target) {
             }
         }
     }
+    return(NULL);
 }
 
 int main(int *argc, char * argv)
 {
+    
     int numSize = 3;
     int nums[numSize];
     nums[0] = 3;
@@ -40,5 +41,6 @@ int main(int *argc, char * argv)
     int target = 6;
     int *result = twoSum(nums, numSize, target);
     printf("arr[%d] + arr[%d] == %d\n", result[0], result[1], target);
+    
 }
 
