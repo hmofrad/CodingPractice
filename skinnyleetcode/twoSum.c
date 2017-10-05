@@ -1,6 +1,6 @@
 /*
  *  Problem: twoSum 
- *  Compile: gcc -o twoSum twoSum.c
+ *  Compile: gcc -o twoSum twoSum.c -g -Wall -Werror 
  *  Run ./twoSum
  *  (c) Mohammad H-Mofrad
  *  (e) mohammad.hmofrad@pitt.edu
@@ -31,7 +31,7 @@ int* twoSum(int* nums, int numsSize, int target) {
     return(returned_nums);
 }
 
-int main(int *argc, char * argv)
+int main(int argc, char *argv[])
 {
     
     int numSize = 3;
