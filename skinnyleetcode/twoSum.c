@@ -1,9 +1,9 @@
 /*
- *   Problem: twoSum 
- *   Compile: gcc -o twoSum twoSum.c
- *   Run ./twoSum
- *   (c) Mohammad H-Mofrad
- *   (e) mohammad.hmofrad@pitt.edu
+ *  Problem: twoSum 
+ *  Compile: gcc -o twoSum twoSum.c
+ *  Run ./twoSum
+ *  (c) Mohammad H-Mofrad
+ *  (e) mohammad.hmofrad@pitt.edu
  */
 
 #include <stdio.h>
@@ -13,21 +13,22 @@
 int* twoSum(int* nums, int numsSize, int target) {
     int i = 0;
     int j = 0;
-    int *returned_nums = malloc(2 * sizeof(int));
-    memset(returned_nums, 0, 2 * sizeof(int));
+    int *returned_nums = NULL;
     for(i = 0; i < numsSize - 1; i++)
     {
         for(j = i + 1; j < numsSize; j++)
         {
             if(nums[i] + nums[j] == target)
             {
+                returned_nums = malloc(2 * sizeof(int));
+                memset(returned_nums, 0, 2 * sizeof(int));
                 returned_nums[0] = i;
                 returned_nums[1] = j;
-                return(returned_nums);
+                break;
             }
         }
     }
-    return(NULL);
+    return(returned_nums);
 }
 
 int main(int *argc, char * argv)
