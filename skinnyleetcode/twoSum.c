@@ -43,6 +43,6 @@ int main(int argc, char *argv[])
     int *result = twoSum(nums, numSize, target);
     free(result);
     printf("arr[%d] + arr[%d] == %d\n", result[0], result[1], target);
-    
+    return(0);
 }
 
