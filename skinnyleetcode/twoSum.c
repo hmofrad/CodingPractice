@@ -1,10 +1,10 @@
 /*
-    twoSum problem:
-    Comile: gcc -o twoSum twoSum.c
-    Run ./twoSum
-    (c) Mohammad H-Mofrad
-    (e) mohammad.hmofrad@pitt.edu
-*/
+ *   Problem: twoSum 
+ *   Compile: gcc -o twoSum twoSum.c
+ *   Run ./twoSum
+ *   (c) Mohammad H-Mofrad
+ *   (e) mohammad.hmofrad@pitt.edu
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
