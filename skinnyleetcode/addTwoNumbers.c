@@ -1,7 +1,7 @@
 /*
  *  Problem: addTwoNumbers
- *  Compile: gcc -o twoSum twoSum.c -g -Wall -Werror 
- *  Run ./twoSum
+ *  Compile: gcc -o addTwoNumbers addTwoNumbers.c -g -Wall -Werror 
+ *  Run ./addTwoNumbers
  *  (c) Mohammad H-Mofrad
  *  (e) mohammad.hmofrad@pitt.edu
  */
