@@ -2,14 +2,14 @@
  *  Problem: lengthOfLongestSubstring
  *  Compile: gcc -o lengthOfLongestSubstring lengthOfLongestSubstring.c -g -Wall -Werror 
  *  Run ./lengthOfLongestSubstring
- *  (c) Mohammad H-Mofrad
+ *  (c) Mohammad H-Mofrad, 2017
  *  (e) mohammad.hmofrad@pitt.edu
  */
  
  
- #include <stdio.h>
- #include <stdlib.h>
- #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
  
  
  int lengthOfLongestSubstring(char *str) {
