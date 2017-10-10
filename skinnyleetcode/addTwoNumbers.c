@@ -2,13 +2,13 @@
  *  Problem: addTwoNumbers
  *  Compile: gcc -o addTwoNumbers addTwoNumbers.c -g -Wall -Werror 
  *  Run ./addTwoNumbers
- *  (c) Mohammad H-Mofrad
+ *  (c) Mohammad H-Mofrad, 2017
  *  (e) mohammad.hmofrad@pitt.edu
  */
  
- #include <stdio.h>
- #include <stdlib.h>
- #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
  
  struct ListNode {
     int val;
