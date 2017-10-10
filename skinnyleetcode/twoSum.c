@@ -2,7 +2,7 @@
  *  Problem: twoSum 
  *  Compile: gcc -o twoSum twoSum.c -g -Wall -Werror 
  *  Run ./twoSum
- *  (c) Mohammad H-Mofrad
+ *  (c) Mohammad H-Mofrad, 2017
  *  (e) mohammad.hmofrad@pitt.edu
  */
 
