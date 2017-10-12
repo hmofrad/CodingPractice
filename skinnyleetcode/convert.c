@@ -11,57 +11,47 @@
 #include <string.h>
 
 char* convert(char* s, int numRows) {
+    //P   A   H   N
+    //A P L S I I G
+    //Y   I   R
+
     char *returned_value = malloc(sizeof(char) * strlen(s));
     memset(returned_value, 0, sizeof(char) * strlen(s));
-    
-    printf("%s\n", s);
+
+    int numColumns = (1 + ((strlen(s) - 1)/(numRows + 1))) + (strlen(s) / (numRows + 1)); // #Zig + #Zag
+
     char *i = s;
     int j = 0;
-    
-    while(*i)
+
+    i = s;
+    int k = 0;
+    int l = 0;
+
+    for(k = 0; k < numRows; k++)
     {
-        if((j%numRows == 0) && (j != 0))
+        for(j = 0; j < numColumns; j++)
         {
-            printf("\n %c \n", *i);    
-            j = 0;
-            //numColumns++;
-        }
-        else
-        {
-            printf("%c ", *i);
-            j++;
+            if(k%numRows != 1)
+            {
+                if(j*(numRows+1) < strlen(s))
+                {
+                    returned_value[l] = *(i + (j*(numRows+1)));
+                    l++;
+                    //printf("%c  ", *(i + (j*(numRows+1))));
+                }
+            }
+            else
+            {
+                if(j * 2 < strlen(s))
+                {
+                    returned_value[l] = *(i + (j * 2));
+                    l++;
+                    //printf("%c ", *(i + (j * 2)));
+                }
+            }
         }
         i++;
-    }
-    printf("\n");
-    int numColumns = 1 + ((strlen(s) - 1) / (numRows + 1)); // ceiling division
-    i = s;
-    printf(" %d\n", numColumns);
-    int k = 0;
-    for(j = 0; j < numColumns; j++)
-    {
-        printf("%c ", *(i + (j*(numRows+1))));
-    }
-    printf("\n");
-    i++;
-    for(j = 0; j < numColumns; j++)
-    {
-        printf("%c ", *(i + (j*(2))));
-    }
-    printf("\n");
-    i++;
-    for(j = 0; j < numColumns; j++)
-    {
-        printf("%c ", *(i + (j*(numRows+1))));
-    }
-    printf("\n");
-    
-    //printf("%c\n", *i);
-    //printf("%c\n", *(i+numRows+1));
-    //printf("%c\n", *(i + (2*(numRows+1))));
-    //printf("%c\n", *(i + (3*(numRows+1))));
-    
-    
+    } 
     return(returned_value);
 }
 
@@ -70,6 +60,7 @@ int main(int argc, char *argv[]) {
     char *s = "PAYPALISHIRING";
     char *r = convert(s, 3);
     printf("%s\n", r);
+    free(r);
     return(0);
 }
 
