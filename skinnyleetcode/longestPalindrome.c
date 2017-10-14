@@ -1,5 +1,5 @@
 /*
- *  Problem: longestPalindrome
+ *  Problem: longestPalindrome (https://leetcode.com/problems/longest-palindromic-substring/description/)
  *  Compile: gcc -o longestPalindrome longestPalindrome.c -g -Wall -Werror 
  *  Run ./longestPalindrome
  *  (c) Mohammad H-Mofrad, 2017
