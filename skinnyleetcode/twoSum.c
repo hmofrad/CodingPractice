@@ -1,5 +1,5 @@
 /*
- *  Problem: twoSum 
+ *  Problem: twoSum (https://leetcode.com/problems/two-sum/description/)
  *  Compile: gcc -o twoSum twoSum.c -g -Wall -Werror 
  *  Run ./twoSum
  *  (c) Mohammad H-Mofrad, 2017
