@@ -1,8 +1,8 @@
 /*
  *  Problem: longestPalindrome (https://leetcode.com/problems/longest-palindromic-substring/description/)
  *  Compile: gcc -o longestPalindrome longestPalindrome.c -g -Wall -Werror 
- *  Run ./longestPalindrome
- *  (c) Mohammad H-Mofrad, 2017
+ *  Execute: ./longestPalindrome
+ *  (c) Mohammad HMofrad, 2017
  *  (e) mohammad.hmofrad@pitt.edu
  */
  
