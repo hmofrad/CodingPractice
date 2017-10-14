@@ -1,5 +1,5 @@
 /*
- *  Problem: lengthOfLongestSubstring
+ *  Problem: lengthOfLongestSubstring (https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
  *  Compile: gcc -o lengthOfLongestSubstring lengthOfLongestSubstring.c -g -Wall -Werror 
  *  Run ./lengthOfLongestSubstring
  *  (c) Mohammad H-Mofrad, 2017
