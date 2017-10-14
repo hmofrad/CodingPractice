@@ -1,8 +1,8 @@
 /*
- *  Problem: convert
+ *  Problem: convert (https://leetcode.com/problems/zigzag-conversion/)
  *  Compile: gcc -o convert convert.c -g -Wall -Werror 
- *  Run ./convert
- *  (c) Mohammad H-Mofrad, 2017
+ *  Execute: ./convert
+ *  (c) Mohammad HMofrad, 2017
  *  (e) mohammad.hmofrad@pitt.edu
  */
  
