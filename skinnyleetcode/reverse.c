@@ -4,7 +4,6 @@
  *  Execute: ./reverse
  *  (c) Mohammad HMofrad, 2017
  *  (e) mohammad.hmofrad@pitt.edu
- *       
  */
  
 #include <stdio.h>
@@ -36,7 +35,7 @@ int reverse(int x) {
     return(reverse);
 }
 
-int main(char argc, char *argv[]) {
+int main(int argc, char *argv[]) {
     
     int x = 1534236469;
     printf("Original: %d\n", x);
