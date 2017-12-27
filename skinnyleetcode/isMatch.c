@@ -14,54 +14,7 @@ typedef int bool ;
 #include <stdlib.h>
 #include <string.h>
  
-//bool dot() {
-//    
-//}    
- 
 bool isMatch(char* s, char* p) {
-    //char *i = s;
-    //char *j = p;
-    /*
-    while(*i) {
-        printf("%c ", *i);
-        i++;
-    }
-    printf("\n");
-    
-    while(*j) {
-        printf("%c ", *j);
-        j++;
-    }
-    printf("\n");
-    */
-    //i = s;
-    //j = p;
-    /*
-    while(true) {
-        printf("%c %c\n", *i, *j);
-
-        if(*j == '.') {
-            printf("dot(%c)\n", *j);
-            
-        } else if(*j == '*') {
-            printf("star(%c)\n", *j);
-        } else {
-            
-        }
-        
-        if(*i) {
-            i++;
-        }
-        if(*j) {
-            j++;
-        }
-        
-        if(!*i && !*j) {
-            break;
-        }
-
-    }
-    */
     
     size_t sl = strlen(s);
     size_t pl = strlen(p);
@@ -72,7 +25,7 @@ bool isMatch(char* s, char* p) {
     while(*pi) {
         //printf("%c\n", *pi);
         if(*pi == '.') {
-            printf("dot(%c, %c)\n", *pi, *si);
+            //printf("dot(%c, %c, %d)\n", *pi, *si, ret);
             if(!*si) {
                 ret = false;
                 break;
@@ -80,21 +33,39 @@ bool isMatch(char* s, char* p) {
             pi++;
             si++;
         } else if(*pi == '*') {
-            printf("star(%c, %c)\n", *pi, *si);
-            pi++;
-            si++;
-            
-        } else {
-            printf("else(%c, %c)\n", *pi, *si);
-            if((*pi != *si) || !*si) {
+            //printf("star(%c, %c, %d)\n", *pi, *si, ret);
+            pi--;
+            if(*pi) {
+                while(*pi == *si) {
+                    si++;
+                }
+                pi++;
+            } else {
                 ret = false;
                 break;
             }
             pi++;
+        } else {
+            //printf("else(%c, %c, %d)\n", *pi, *si, ret);
+            if((*pi != *si) || !*si) {
+                ret = false;
+                //break;
+            }
+            pi++;
             si++;
+             //&& !(*(pi+1))
+            if((!*pi && *si) || !*pi) {
+                ret = false;
+                if(*pi == *si) {
+                    ret = true;
+                }
+                break;
+            }
+            if(*pi && !ret) {
+                ret = true;
+                si--;
+            }
         }
-        
-
     }
     
     return(ret);
@@ -103,6 +74,7 @@ bool isMatch(char* s, char* p) {
 int main(int argc, char *argv[]) {
     char *s = "aab";
     char *p = "c*a*b";
+    printf("%s ? %s\n", s, p);
     bool r = isMatch(s, p);
     printf("isMatch=%d\n", r);
     return(0);
