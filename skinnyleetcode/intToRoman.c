@@ -1,4 +1,4 @@
-/*  Incomplete, be back later
+/*  
  *  Problem: intToRoman (https://leetcode.com/problems/palindrome-number/description/)
  *  Compile: gcc -o intToRoman intToRoman.c -g -Wall -Werror 
  *  Execute: ./intToRoman
@@ -8,8 +8,9 @@
  
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define MAX_LENGTH 10 // strlen('MMMCMXCIX\0') = 10 + 
+#define MAX_LENGTH 100
 
 /*
 enum roman {
@@ -35,7 +36,7 @@ int numDigits(int num) {
     return(d);
 }
 
-int pow(int num, int exp) {
+int ipow(int num, int exp) {
     int i = 0;
     int ret = 1;
     for(i = 0; i < exp; i++) {
@@ -44,123 +45,87 @@ int pow(int num, int exp) {
     return(ret);
 }
 
-char *roman_numeral(int num, int place) {
-    int number = num;
-    int multiplier = place;
-    char *roman_numeral = malloc(sizeof(char) * MAX_LENGTH);
-    memset(roman_numeral, '\0', sizeof(char) * MAX_LENGTH);
-    while(num <= 3) {
-        switch(place) {
-            case 1:
-                *roman_numeral = 'I';
-                break;
-            case 5:
-                *roman_numeral = 'V';
-                break;
-            case 10:
-                *roman_numeral = 'X';
-                break;
-            case 50:
-                *roman_numeral = 'L';
-                break;
-            case 100:
-                *roman_numeral = 'C';
-                break;
-            case 500:
-                *roman_numeral = 'D';
-                break;
-            case 1000:
-                *roman_numeral = 'M';
-                break;
-            default:
-                printf("Invalid number=%d", number);
-                break;
-        }
-        num--;
+char roman_numeral(int place) {
+    char roman_index;
+    switch(place) {
+        case 1:
+            roman_index = 'I';
+            break;
+        case 5:
+            roman_index = 'V';
+            break;
+        case 10:
+            roman_index = 'X';
+            break;
+        case 50:
+            roman_index = 'L';
+            break;
+        case 100:
+            roman_index = 'C';
+            break;
+        case 500:
+            roman_index = 'D';
+            break;
+        case 1000:
+            roman_index = 'M';
+            break;
+        default:
+            printf("Invalid place=%d", place);
+            break;
     }
-    return(roman_numeral);
+    return(roman_index);
 }
  
 char *intToRoman(int num) {
-    int n = numDigits(num);
-    //printf("%d\n", n);
-    
-    //char *roman = malloc(sizeof(char) * n);
-    
-    
-    //for(i = 0; i < 3; i++) {
-    
-    //while(num) {
-        
-    //}
-    
-    int m = pow(10, n - 1);
-    //printf("%d %d \n", m, num/m);
-    int num1 = 0;
-    while(num) {
-        num1 = num / m;
-        printf("%d %d %s\n", num1, m, roman_numeral(num1, m));
-        
-        
-        
-        
-        num = num - (num1 * m);
-        m = m / 10;
-        
-        //break;
-        
-    }
-    
-
-    /*
-    int r = 0;
-    int m = 10;
-    int c = 1;
+    char *roman_num = malloc(sizeof(char) * MAX_LENGTH);
     int i = 0;
+    memset(roman_num, '\0', sizeof(char) * MAX_LENGTH);
+    char *roman_index = roman_num;
+    char *temp_index = NULL;
+    int n = numDigits(num);    
+    int place = ipow(10, n - 1);
+    int num1 = 0;
+    int num2 = 0;
+    
     while(num) {
-        r = num % m;
-        printf("%d %d %d\n", num, r, c);
-        num = num / m;
-        c = c * 10;
+        num1 = num / place;
+        num = num - (num1 * place);
+        printf("%d %d\n", num1, place);
         
-        //num = num - r;
-        //m = m * 10;
+        // 1, 2, 3, 6, 7, and 8
+        if((num1 <= 3) || (num1>= 6) && (num1 <= 8)) {
+            if(num1 > 5) {
+                roman_num[i] = roman_numeral(5 * place);
+                i++;
+                num1 = num1 % 5;
+            }
+            while(num1) {
+                roman_num[i] = roman_numeral(place);
+                i++;
+                num1--;
+            }
+        // 4, and 9    
+        } else if(((((num1 * place) + place) - place) == 4 * place) || ((((num1 * place) + place) - place) == 9 * place)) { 
+            roman_num[i] = roman_numeral(place);
+            i++;
+            roman_num[i] = roman_numeral((num1 * place) + place);
+            i++;
+        // 5, and 10
+        } else {
+            roman_num[i] = roman_numeral(num1 * place);
+            i++;
+        }
+        
+        place = place / 10;
     }
-    */
-    
-    //int m = 10;
-    
-    //printf("%d %d %d %d\n", num, num / m, (num / m) * m, num - ((num / m) * m) );
-    //int r = num - ((num / m) * m);
-    //num = ((num / m) * m);
-    //num = num - r;
-    //printf("%d %d\n", num, r);
-    //m = m * 10;
-    //printf("%d %d %d %d %d\n", num, num / m, (num / m) * m, num - ((num / m) * m), (num - ((num / m) * m))/(m/10));
-    //r = (num - ((num / m) * m))/(m/10);
-    //num = num - r;
-    
-    //printf("%d %d %d %d\n", num, num / m, (num / m) * m, num - ((num / m) * m) );
-    //int new_num = ((num / m) * m);
-    //int r = num - ((num / m) * m);
-    
-    //printf("%d %d %d %d\n", num, new_num, );
-    //printf("%d %d %d\n", num, num / 10, num / 100);
-    //enum roman r = C;
-    //printf("%d\n", r);
-    exit(0);
-     
-    char *ret = malloc(sizeof(char) * 3);
-    ret[0] = 'I';
-    ret[1] = 'I';
-    ret[2] = '\0';
-    return(ret);
+    return(roman_num);
 }
  
 int main(int argc, char *argv[]) {
-    int num = 123;
+    int num = 60;
+    printf("Number:%d\n", num);
     char *roman = intToRoman(num);
-    printf("%s\n", roman);
+    printf("Roamn numeral: %s\n", roman);
      
     return(0);
  }
