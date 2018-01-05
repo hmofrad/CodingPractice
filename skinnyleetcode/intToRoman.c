@@ -1,5 +1,5 @@
 /*  
- *  Problem: intToRoman (https://leetcode.com/problems/palindrome-number/description/)
+ *  Problem: intToRoman (https://leetcode.com/problems/integer-to-roman/)
  *  Compile: gcc -o intToRoman intToRoman.c -g -Wall -Werror 
  *  Execute: ./intToRoman
  *  (c) Mohammad HMofrad, 2018
