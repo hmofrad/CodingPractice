@@ -14,6 +14,22 @@
  * Return an array of arrays of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
+ 
+ 
+void insertionSort(int *nums, int numsSize) {
+    int i = 0;
+    int j = 0;
+    int value = 0;
+    for(i = 1; i < numsSize; i++) {
+        value = nums[i];
+        j = i;
+        while((j > 0) && (nums[j-1] > value)) {
+            nums[j] = nums[j - 1];
+            j--;
+        }
+        nums[j] = value;
+    }
+} 
 
 int* threeSort(int num1, int num2, int num3) {
     int *sortedArray = malloc(sizeof(int) * 3);
@@ -67,9 +83,12 @@ int compare(int **array1, int array1Size, int *array2) {
     return(new);
 }
 
-  //str = (char *) realloc(str, 25);
+/*
+// Slow solution
 int** threeSum(int* nums, int numsSize, int* returnSize) {
-    int **ret = malloc(sizeof(int *));
+    insertionSort(nums, numsSize);
+    int size = 1;
+    int **ret = malloc(sizeof(int *) * size);
     *returnSize = 0;
     int i = 0;
     int j = 0;
@@ -81,34 +100,87 @@ int** threeSum(int* nums, int numsSize, int* returnSize) {
             for(k = j + 1; k < numsSize; k++) {
                 l = nums[i] + nums[j] + nums[k];
                 if(!l) {
-                    //printf("%d %d %d = %d\n", nums[i], nums[j], nums[k],l);
-                    //ret[*returnSize] = malloc(sizeof(int) * 3);
-                    //ret[*returnSize][0] = nums[i];
-                    //ret[*returnSize][1] = nums[j];
-                    //ret[*returnSize][2] = nums[k];
                     int *tempArray = threeSort(nums[i], nums[j], nums[k]);
                     if(!compare(ret, *returnSize, tempArray)) {
                         ret[*returnSize] = tempArray;
-                        (*returnSize) = (*returnSize) + 1;
-                        ret = realloc(ret, sizeof(int *) * ((*returnSize) + 1));
+                        *returnSize = *returnSize + 1;
                     }
-                    
-                    //exit(0);
+                    if(*returnSize == size) {
+                        size *= 2;
+                        ret = realloc(ret, sizeof(int *) * size);
+                    }
                 }
             }
         }
     }
     return(ret);
 }
+*/
+
+// Fast solution
+int** threeSum(int* nums, int numsSize, int* returnSize) {
+    insertionSort(nums, numsSize);
+    int size = 1;
+    int **ret = malloc(sizeof(int *) * size);
+    *returnSize = 0;
+    int *tempArray = NULL;
+    
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    int i = 0;
+    int left = 0;
+    int right =0;
+    for(i = 0; i < numsSize - 2; i++) {
+        a = nums[i]; 
+        left = i + 1;
+        right = numsSize - 1;
+        while(left < right) {
+            b = nums[left];
+            c = nums[right];
+            if(!(a + b + c)) {
+                printf("%d %d %d %d %d %d\n", i, left, right, a, b, c);
+                tempArray = malloc(sizeof(int) * 3);
+                tempArray[0] = a;
+                tempArray[1] = b;
+                tempArray[2] = c;
+                if(!compare(ret, *returnSize, tempArray)) {
+                    ret[*returnSize] = tempArray;
+                    *returnSize = *returnSize + 1;
+                    if(*returnSize == size) {
+                        size *= 2;
+                        ret = realloc(ret, sizeof(int *) * size);
+                    }
+                }
+                if(nums[left + 1] == b) {
+                    left++;
+                } else {
+                    right--;
+                }
+            } else if((a + b + c) > 0) {
+                right--;
+            } else { // (a + b + c) < 0
+                left++;
+            }
+            
+        }
+        
+    }
+    return(ret);
+}
+
 
 int main(int argc, char *argv[]) {
-    int size = 6;
-    int source[10]  = {-1, 0, 1, 2, -1, -4};
+    int size = 7;
+    int source[10]  = {-1, 0, 1, 2, -1, -4, 3};
+    
+    //insertionSort(source, size);
     int s = 0;
     for(s = 0; s < size; s++) {
         printf("%d ", source[s]);
     }
     printf("\n");
+    
     int returnSize = 0;
     int **returnedArray = threeSum(source, size, &returnSize);
     printf("%d\n", returnSize);
