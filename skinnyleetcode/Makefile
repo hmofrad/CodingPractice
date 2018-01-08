@@ -1,8 +1,8 @@
 #!/bin/bash/make
 
 CC=gcc
-CFLAGS=-g -Wall -Werror 
-obj=findMedianSortedArrays
+CFLAGS=-g # -Wall -Werror 
+obj=threeSum
 
 install:
 	$(CC) $(CFLAGS) -o $(obj) $(obj).c
