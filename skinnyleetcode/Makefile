@@ -2,7 +2,7 @@
 
 CC=gcc
 CFLAGS=-g # -Wall -Werror 
-obj=threeSum
+obj=bfs
 
 install:
 	$(CC) $(CFLAGS) -o $(obj) $(obj).c
