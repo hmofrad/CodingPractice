@@ -19,6 +19,9 @@ if [ -z "$1" ] || [ $# -gt 2 ]; then
     exit 1;
 fi
 
+git config --global user.email m.hasanzadeh.mofrad@gmail.com
+git config --local user.email m.hasanzadeh.mofrad@gmail.com
+
 FILE=$1
 COMMENT=$2
 # Disable gnome-ssh-askpass
