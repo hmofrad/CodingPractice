@@ -1,7 +1,7 @@
 /*
  *  Problem: Merge two sorted lists (https://leetcode.com/problems/merge-two-sorted-lists/description/)
  *  Compile: g++ -o mergeTwoLists mergeTwoLists.cpp && ./mergeTwoLists -g -Wall -Werror
- *  Execute: ./addTwoNumbers
+ *  Execute: ./mergeTwoLists
  *  (c) Mohammad Mofrad, 2018
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */
