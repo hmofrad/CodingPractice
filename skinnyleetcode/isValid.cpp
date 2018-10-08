@@ -1,7 +1,7 @@
 /*
  *  Problem: Valid parentheses (https://leetcode.com/problems/valid-parentheses/description/)
  *  Compile: g++ -o isValid isValid.cpp && ./isValid -g -Wall -Werror
- *  Execute: ./addTwoNumbers
+ *  Execute: ./isValid
  *  (c) Mohammad Mofrad, 2018
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */
