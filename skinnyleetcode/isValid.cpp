@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <vector>
 
-class ValidParentheses{
+class Solution{
     public:
         bool isValid(std::string s)
         {
@@ -73,7 +73,7 @@ class ValidParentheses{
 int main(int argc, char **argv){
     
     
-    ValidParentheses Test;
+    Solution Test;
     std::string str = "";
     bool ret = Test.isValid(str);
     std::cout << ret << std::endl;
