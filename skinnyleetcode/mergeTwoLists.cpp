@@ -18,47 +18,18 @@ struct ListNode
     int val; 
     ListNode* next;
     ListNode(int x): val(x), next(NULL) {};
-    //ListNode();
-    //void populate(ListNode *list);
 };
 
-
-
-void populate(ListNode* head, int count, int start_val_)
+void insert(ListNode*& head, int val_)
 {
-    int start_val = start_val_;
-    head->val = start_val;
-    for(int i = 0; i < count - 1; i++)
+    if(head == NULL)
+        head = new ListNode(val_); 
+    else
     {
-        start_val++;
-        head->next = new ListNode(start_val); 
-        head = head->next;
-        
-    }
-}
-
-void traverse(ListNode* head)
-{
-    while(head)
-    {
-        printf("%d ", head->val);
+        head->next = new ListNode(val_); 
         head = head->next;
     }
-    printf("\n");
 }
-
-int getSize(ListNode* head)
-{
-    int size = 0;
-    while(head)
-    {
-        
-        size++;
-        head = head->next;
-    }
-    return(size);
-}
-
 
 void free(ListNode* head)
 {
@@ -71,129 +42,107 @@ void free(ListNode* head)
     }    
 }
 
-class MergeTwoSortedLists
+void traverse(ListNode* head)
+{
+    while(head)
+    {
+        printf("%d ", head->val);
+        head = head->next;
+    }
+    printf("\n");
+}
+
+class Solution
 {
     public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
 };
 
-ListNode* MergeTwoSortedLists::mergeTwoLists(ListNode* l1, ListNode* l2)
+ListNode* Solution::mergeTwoLists(ListNode* l1, ListNode* l2)
 {
-    int size1 = getSize(l1);
-    int size2 = getSize(l2);
+    ListNode* list = NULL;
+    ListNode* head = NULL;
+    if(l1 or l2)
+        insert(list, 0);
+    head = list;
     
-    ListNode* list = new ListNode(0);
-    ListNode* head = list;
-    
-    int it1 = 0;
-    int it2 = 0;
-    
-    while(it1 < size1 and it2 < size2)
+    while(l1 and l2)
     {
         if(l1->val < l2->val)
         {
             head->val = l1->val;
-            if(l1->next)
-            {
-                head->next = new ListNode(0);
-                head = head->next;
-            }
-            it1++;
+            if(l1->next or l2)
+                insert(head, 0);
             l1 = l1->next;
         }
-        else if(l1->val < l2->val)
+        else if(l1->val > l2->val)
         {
             head->val = l2->val;
-            if(l2->next)
-            {
-                head->next = new ListNode(0);
-                head = head->next;
-            }
-            it2++;
+            if(l1 or l2->next)
+                insert(head, 0);
             l2 = l2->next;
+            
         }
-        else if(l1->val == l2->val)
+        else// if(l1->val == l2->val)
         {
             head->val = l1->val;
-            head->next = new ListNode(0);
-            head = head->next;
-            it1++;
+            insert(head, 0);
             head->val = l2->val;
-            if(l2->next)
-            {
-                head->next = new ListNode(0);
-                head = head->next;
-            }
-            it2++;
+            if(l1->next or l2->next)
+                insert(head, 0);
             l1 = l1->next;
             l2 = l2->next;
         }
     }
-    int it = 0;
-    int size = 0;
+    traverse(list);
+
     ListNode *l;
-    if(it1 < size1)
-    {
-        it = it1;
-        size = size1;
+    if(l1)
         l = l1;
-    }
     else
-    {
-        it = it2;
-        size = size2;
         l = l2;
-    }
     
-    while(it < size)
+    while(l)
     {
-        //printf("%d %d %d %p\n", it, l->val, head->val, l->next);
         head->val = l->val;
         if(l->next)
-        {
-            head->next = new ListNode(0);
-            head = head->next;
-        }
+            insert(head, 0);
         l = l->next;
-        it++;
     }
-    //free(head);
     
-    
-    //head = list;
-    //traverse(list);
     return(list);
 }
 
 int main(int argc, char **argv)
-{
-    
-    
-    MergeTwoSortedLists lists;
-    
-    ListNode *list1 = new ListNode(0);
-    ListNode *head1 = list1;
-    populate(head1, 10, 5);
+{    
+    ListNode *list1 = NULL;
+    ListNode* head1 = NULL; // Technocally it should be current
+    insert(head1, 2);
+    list1 = head1;
+    //insert(head1, 2);
+    //insert(head1, 4);
+    //for(int i = 1; i < NUM; i++)
+    //    insert(head1, i);
+    head1 = list1;
     traverse(head1);
 
-    ListNode *list2 = new ListNode(0);
-    ListNode *head2 = list2;
-    populate(head2, 10, 10);
-    traverse(head2);    
+    ListNode *list2 = NULL;
+    ListNode* head2 = NULL;
+    insert(head2, 1);
+    list2 = head2;
+    //insert(head2, 3);
+    //insert(head2, 4);
+    //for(int i = 6; i < NUM + 5; i++)
+    //    insert(head2, i);
+
+    head2 = list2;
+    //traverse(head2);
     
-    MergeTwoSortedLists merger;
+    Solution merger;
     ListNode *list = merger.mergeTwoLists(list1, list2);
     traverse(list);
     
-    
     free(head1);
     free(head2);
-    //ListNode list2(5);
-    //list1.next = &list2;
-    //printf("Hello %d %d %p %p\n", list1.val, list2.val, &list2, list1.next);
-    //ListNode list1(3);
-    
-    
-    
     return(0);
 }
