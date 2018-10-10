@@ -94,7 +94,6 @@ ListNode* Solution::mergeTwoLists(ListNode* l1, ListNode* l2)
             l2 = l2->next;
         }
     }
-    traverse(list);
 
     ListNode *l;
     if(l1)
@@ -117,26 +116,21 @@ int main(int argc, char **argv)
 {    
     ListNode *list1 = NULL;
     ListNode* head1 = NULL; // Technocally it should be current
-    insert(head1, 2);
+    insert(head1, 1);
     list1 = head1;
-    //insert(head1, 2);
-    //insert(head1, 4);
-    //for(int i = 1; i < NUM; i++)
-    //    insert(head1, i);
+    for(int i = 1; i < NUM; i++)
+        insert(head1, i);
     head1 = list1;
     traverse(head1);
 
     ListNode *list2 = NULL;
     ListNode* head2 = NULL;
-    insert(head2, 1);
+    insert(head2, 5);
     list2 = head2;
-    //insert(head2, 3);
-    //insert(head2, 4);
-    //for(int i = 6; i < NUM + 5; i++)
-    //    insert(head2, i);
-
+    for(int i = 6; i < NUM + 5; i++)
+        insert(head2, i);
     head2 = list2;
-    //traverse(head2);
+    traverse(head2);
     
     Solution merger;
     ListNode *list = merger.mergeTwoLists(list1, list2);
