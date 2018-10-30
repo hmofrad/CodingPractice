@@ -136,6 +136,8 @@ int main(int argc, char **argv)
     ListNode *list = merger.mergeTwoLists(list1, list2);
     traverse(list);
     
+    head1 = list1;
+    head2 = list2;
     free(head1);
     free(head2);
     return(0);
