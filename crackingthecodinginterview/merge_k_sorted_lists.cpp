@@ -160,11 +160,11 @@ void sort(uint32_t k, std::vector<std::vector<uint32_t>> &arr)
             }
             */
 
-            //if(min_val[0] <= min)
-            //{
-                //min = min_val;
-                //ptr = min_ptr;  
-           // }
+            if(min_val[0] <= min)
+            {
+                min = min_val;
+                ptr = min_ptr;  
+            }
             //printf("i=%d p=%d v=%d\n", i, pointers[i], arr[i][pointers[i]]);
         }
         for(uint32_t l = 0; l < min_ptr.size(); l++)
