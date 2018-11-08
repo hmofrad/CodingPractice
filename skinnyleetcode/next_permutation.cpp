@@ -1,6 +1,6 @@
 /*
  *  Problem: Next permutation (https://leetcode.com/problems/next-permutation/)
- *  Compile: g++ -o next_permutation next_permutation.cpp && ./next_permutation -g -Wall -Werror
+ *  Compile: g++ -o next_permutation next_permutation.cpp && ./next_permutation
  *  Execute: ./next_permutation
  *  (c) Mohammad Mofrad, 2018
  *  (e) m.hasanzadeh.mofrad@gmail.com
@@ -23,69 +23,32 @@ public:
 
 void permutation(std::vector<int>& nums)
 {
-    //if(nums.size() >= 1)
-    //{
     for(int i = 0; i < nums.size(); i++)
     {
         
         int v = nums[i];
-        //printf("%d %d %lu\n ", i, v, nums.size());
-        std::vector<int> next;
+        printf("%d,", v);
         int next_len = nums.size() - 1;
-        //printf(">>>>>%d %d %lu\n", next_len, i, nums.size());
-        //next.resize(next_len);
-        if(next_len > 0)
+        if(next_len)
+        {
+            std::vector<int> next;
             next.resize(next_len);
-        /*
-        else
-        {
-            printf("%d\n", v);
-            return;
-        }
-        */
-        
-        int j = 0;
-        for(int k = 0; k < nums.size(); k++)
-        {
-            int v_next = nums[k];
-            if(v != v_next)
+            int j = 0;
+            for(int k = 0; k < nums.size(); k++)
             {
-                //next.push_back(v_next);
-                next[j] = v_next;
-                //printf("[%d] ", next[j]);
-                j++;
+                int v_next = nums[k];
+                if(v != v_next)
+                {
+                    next[j] = v_next;
+                    j++;
+                }
             }
-        }
-        
-        
-        if(next.size())
-        {
-            printf("%d ", v);
+            //printf("%d,", v);
             permutation(next);
         }
         else
-            printf("%d\n ", v);    
-        
-        
-        //if(next.size() > 1)
-            /*
-        if(next_len > 1)
-        {
-            permutation(next);
-            printf("<%d> ", v);
-        }
-        else
-        {
-            printf("%d\n", next[0]);
-            //return;
-        }
-        */
+           printf("\n");
     }
-    //}
-   // else
-    //    return;
-        
-    
 }
 /*
 void nextPermutation(std::vector<int>& nums)
