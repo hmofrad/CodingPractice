@@ -31,17 +31,17 @@ int strStr(std::string haystack, std::string needle)
         
     }
     
-    int num_steps = size_h / size_n;
+    int num_steps = size_h - size_n + 1;
     int ret = -1;
+    
+    
 
-    if(not size_h or not size_n)
-        return(0);
     printf("%d %d %d\n", size_h, size_n, num_steps);
     for(int i = 0; i < num_steps; i++)
     {
         
-        int start = i*size_n;
-        int end   = i*size_n + size_n;
+        int start = i;
+        int end   = i + size_n;
         bool found = true;
         int k = 0;
         printf("%d %d %d\n", i, start, end);
@@ -64,9 +64,9 @@ int strStr(std::string haystack, std::string needle)
     return(ret);
 }
 int main(int argc, char **argv)
-{    
-    std::string haystack = "hello";
-    std::string needle = "ll";
+{
+    std::string haystack = "a";
+    std::string needle = "a";
     int ret = strStr(haystack, needle);
     printf("[%s] [%s] [%d]\n", haystack.c_str(), needle.c_str(), ret);
     return(0);
