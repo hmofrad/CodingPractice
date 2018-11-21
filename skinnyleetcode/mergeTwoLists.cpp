@@ -114,7 +114,7 @@ ListNode* Solution::mergeTwoLists(ListNode* l1, ListNode* l2)
 
 int main(int argc, char **argv)
 {    
-    ListNode *list1 = NULL;
+    ListNode* list1 = NULL;
     ListNode* head1 = NULL; // Technocally it should be current
     insert(head1, 1);
     list1 = head1;
@@ -123,7 +123,7 @@ int main(int argc, char **argv)
     head1 = list1;
     traverse(head1);
 
-    ListNode *list2 = NULL;
+    ListNode* list2 = NULL;
     ListNode* head2 = NULL;
     insert(head2, 5);
     list2 = head2;
