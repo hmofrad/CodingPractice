@@ -105,56 +105,6 @@ std::vector<int> findMinHeightTrees(int n, std::vector<std::pair<int, int>>& edg
     printf("\n");
     int ret = lookup(1, -1);
     printf("Result:%d\n", ret);
-    //for(int i = 0; i < nvertices; i++)
-    //{
-        //printf("Row:%d\n", i);
-        
-    //}
-    
-    
-    
-    /*
-    int nnz = edges.size();
-    J.resize(nnz);
-    IA.resize(n+1);
-    int i = 1;
-    int j = 0;
-    IA[0] = 0;
-    for(auto& edge : edges)
-    {
-        printf("%d %d\n", edge.first, edge.second);
-        while(edge.first > (i - 1))
-        {
-            i++;
-            IA[i] = IA[i-1];
-        }
-        IA[i]++;
-        J[j] = edge.second;
-        j++;
-    }
-    while(i + 1< n + 1)
-    {
-        i++;
-        IA[i] = IA[i-1];
-    }
-
-    for(int i = 0; i < n; i++)
-    {
-        printf("%d\n", i);
-        for(int j = IA[i]; j < IA[i+1]; j++)
-        {
-            printf("i=%d j=%d\n", i, J[j]);
-        }
-    }
-*/
-    
-    
-    //for(int i = 0; i < n; i++)
-    //{        
-      //  printf("%d\n", i);
-        //std::find(edges.begin(), edges.end(), n, 
-    //}
-    
     return(mhts);
 }
 int main(int argc, char **argv)
@@ -169,29 +119,6 @@ int main(int argc, char **argv)
     for(int i = 0; i < m; i++)
         edges.push_back(std::make_pair(srcs[i], dsts[i]));
     
-    
-    
-   // for(int i = 0; i < m; i++)
-   //     printf("%d %d\n", edges[i].first, edges[i].second);
-    
-    /*
-    int n = 6;
-    int m = 5;
-    std::vector<std::pair<int, int>> edges;
-    int srcs[] = {1, 1, 2, 4, 5};
-    int dsts[] = {3, 3, 3, 3, 4};
-    
-    for(int i = 0; i < m; i++)
-        edges.push_back(std::make_pair(srcs[i], dsts[i]));
-    
-    for(int i = 0; i < m; i++)
-        printf("%d %d\n", edges[i].first, edges[i].second);
-    */
-    
-    std::vector<int> ret = findMinHeightTrees(n, edges);
-   // for(int i = 0; i < ret.size(); i++)
-     //   printf("%d\n", ret[i]);
-    
-    
+    std::vector<int> ret = findMinHeightTrees(n, edges);    
     return(0);
 }
