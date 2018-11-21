@@ -1,5 +1,5 @@
 /*
- *  Problem:  Describe how you could use a single array to implement 3 stacks
+ *  Problem: Describe how you could use a single array to implement 3 stacks
  *  Compile: g++ -o 3stacks 3stacks.cpp -g -Wall -Werror
  *  Execute: ./3stacks
  *  (c) Mohammad Mofrad, 2018
