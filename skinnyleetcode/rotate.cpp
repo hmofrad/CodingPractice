@@ -54,10 +54,8 @@ void rotate1(std::vector<std::vector<int> > &matrix)
     print(matrix);
     int n = matrix[0].size();
     int d = n - 1;
-    std::vector<std::vector<int> > matrix1;
-    matrix1.resize(n);
-    for(int i = 0; i < n; i++)
-        matrix1[i].resize(n);
+    
+    
     
     for(int i = 0; i < 1; i++)
     {
@@ -88,7 +86,7 @@ int main(int argc, char **argv)
         }
     }
     
-    rotate(matrix);
+    rotate1(matrix);
     printf("%d\n", n/2);
     
     
