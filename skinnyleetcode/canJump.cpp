@@ -23,18 +23,18 @@ bool delve(std::vector<int> &nums, int idx)
         if(idx == nums.size())
         {
             
-            printf("Done\n");
+            //printf("Done\n");
             return (true);
         }
         else
         {
-            printf("Not done\n");
+            //printf("Not done\n");
             return (false);
         }
     }  
     else
     {
-        printf("11.idx=%d\n", idx);
+       // printf("11.idx=%d\n", idx);
         if(nums[idx] == 0)
         {
             if(idx + 1 == nums.size())
@@ -47,15 +47,15 @@ bool delve(std::vector<int> &nums, int idx)
         for(int i = 1; i <= nums[idx]; i++)
         //for(int i = 0; i <= nums[idx]; i++)
         {
-            printf("1.idx=%d,i=%d\n", idx, i);
+            //printf("1.idx=%d,i=%d\n", idx, i);
 
                 
             can = delve(nums, idx + i);
-            printf("2.idx=%d,i=%dc=%d\n", idx, i, can==true);
+          //  printf("2.idx=%d,i=%dc=%d\n", idx, i, can==true);
             if(can)
                 return(can);
         }
-        printf("2.idx=%d\n", idx);
+        //printf("2.idx=%d\n", idx);
     }
     return(can);
 }
