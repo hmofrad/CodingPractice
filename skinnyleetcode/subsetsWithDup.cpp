@@ -41,32 +41,76 @@ std::vector<std::vector<int>> subsetsWithDup(std::vector<int>& nums) {
     }
     
     int n = unique.size();
-    for(int i = 0; i < m; i++) {
-        printf("[%d %d] ", unique[i], counts[i]);
-    }
-    printf("\n");
-    
-    int k = 0;
-    //powerset.resize(n);
-    for(int i = 0; i < n; i++) {
-        printf("%d\n", unique[i]);
-        if(counts[i] > 1) {
-            for(int j = 0; j < counts[i]; j++) {
-                printf("%d ", unique[i]);
-            }
-            printf("\n");
-        }
-            //k++;
-    }
-    //printf("k=%d\n", k);
-    //powerset.resize(n+1);
     //for(int i = 0; i < n; i++) {
-    //    powerset[k].push_back(unique[i]);
+    //    printf("[%d %d] ", unique[i], counts[i]);
     //}
+    //printf("\n");
+    
+    int p = 0;
+    //powerset.resize(n);
     
     
-    // 
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < counts[i]; j++) {
+            powerset.resize(p+1);
+            for(int k = 0; k < j + 1; k++) {
+             //   printf("%d ", unique[i]);
+                powerset[p].push_back(unique[i]);
+            }
+            p++;
+           // printf("\n");
+        }
+    }
     
+    for(int i = 0; i < n - 1; i++) {
+        for(int j = 0; j < counts[i]; j++) {
+            //powerset.resize(p+1);
+            //for(int k = 0; k < j + 1; k++) {
+                //printf("%d ", unique[i]);
+              //  powerset[p].push_back(unique[i]);
+            //}
+            //p++;
+            ///printf("\n");
+            
+                for(int ii = i + 1; ii < n; ii++) {
+                    printf(">>%d %d\n", ii, unique[i]);
+                    for(int jj = 0; jj < counts[ii]; jj++) {
+                        powerset.resize(p+1);
+                        for(int k = 0; k < j + 1; k++) {
+                            //printf("%d ", unique[i]);
+                            powerset[p].push_back(unique[i]);
+                        }
+                        
+                        
+                        
+                        for(int kk = 0; kk < jj + 1; kk++) {
+                            //printf("%d, ", unique[ii]);
+                            powerset[p].push_back(unique[ii]);
+                        }
+                        p++;
+                        //printf("\n");
+                    }
+                }
+                
+            
+        }
+    }
+    /*
+    for(int i = n-1; i < n; i++) {
+        for(int j = 0; j < counts[i]; j++) {
+            powerset.resize(p+1);
+            for(int k = 0; k < j + 1; k++) {
+             //   printf("%d ", unique[i]);
+                powerset[p].push_back(unique[i]);
+            }
+            p++;
+           // printf("\n");
+        }
+    }
+    */
+    
+    powerset.resize(p+1);
+    p++;
     
     return(powerset);
 }
@@ -74,7 +118,7 @@ std::vector<std::vector<int>> subsetsWithDup(std::vector<int>& nums) {
 
 int main(int argc, char** argv) {
     int m = 3;
-    std::vector<int> nums = {1, 2, 2};
+    std::vector<int> nums = {1, 2, 3};
     
     for(int i = 0; i < m; i++)
         printf("%d ", nums[i]); 
