@@ -23,6 +23,14 @@ int minimumTotal(std::vector<std::vector<int>>& triangle) {
         }
         printf("\n");
     }
+    
+    std::vector<std::vector<int>> paths(m);
+    for(int i = 0; i < m; i++) {
+        
+        //pathes[i].push_back()
+    }
+    
+    
     return(0);
 }
 
