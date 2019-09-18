@@ -75,6 +75,11 @@ public:
             return(*std::max_element(nums.begin(), nums.end()));
         }
         else {
+            int v1 = nums[0];
+            std::vector<int> new_nums(nums.begin()+1, nums.end());
+            int v2 = rob(new_nums);
+            printf("%d %d\n", v1, v2);
+            
             //int m = std::min_element(nums);
             //std::vector<int>::iterator result = std::min_element(std::begin(v), std::end(v));
             //int m = min_idx(nums);
