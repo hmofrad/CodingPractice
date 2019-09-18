@@ -98,6 +98,7 @@ int main(int argc, char** argv) {
     //std::string str = "Hello, World!";
     printf("%s\n", str.c_str());
     std::vector<char> u = unique(str);
-    printf("is_uniq(%s) ? %d/%d/%d\n", str.c_str(), is_unique(str), is_unique1(str), is_unique2(str));
+//    printf("is_uniq(%s) ? %d/%d/%d\n", str.c_str(), is_unique(str), is_unique1(str), is_unique2(str));
+printf("is_uniq(%s) ? %d\n", is_unique2(str));
     return(0);
 }
