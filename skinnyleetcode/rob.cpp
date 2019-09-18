@@ -76,34 +76,23 @@ public:
         }
         else {
             int v1 = nums[0];
+            std::vector<int> new_nums1(nums.begin()+2, nums.end());
+            int v2 = rob(new_nums1);
+            int v3 = v1 + v2;
+            
             std::vector<int> new_nums(nums.begin()+1, nums.end());
-            int v2 = rob(new_nums);
-            printf("%d %d\n", v1, v2);
-            
-            //int m = std::min_element(nums);
-            //std::vector<int>::iterator result = std::min_element(std::begin(v), std::end(v));
-            //int m = min_idx(nums);
-            //int minIdx = std::min_element(nums.begin(), nums.end()) - nums.begin();
-            //int minElement = *std::min_element(nums.begin(), nums.end());
-            //printf("%lu: %d %d\n", nums.size(), minIdx, minElement);
-            /*
-            int r = 0;
-            if(nums.size() > 2) {
-                std::vector<int> new_nums(nums.begin()+2, nums.end());
-                r = rob(new_nums);
-            }
-            
-            if(nums[0] > r) {
-                v += nums[0];
-                std::vector<int> new_nums(nums.begin()+2, nums.end());
+            int v4 = rob(new_nums);
+            //printf("v1=%d v2=%d v3=%d\n", v1, v2, v3);
+            if(v3 > v4) {
+                v += v3;
+                
+                
+                //return(v);
             }
             else {
-                v += r;
+                v += v4;
             }
-            //v += std::min(nums[0], rob(new_nums));
             return(v);
-            */
-            //return(std::min(nums[0], rob(nums.begin() + 1)));
         }
         
         //int d = 0;
@@ -113,7 +102,8 @@ public:
 };
 int main(int argc, char **argv) {
     //std::vector<int> v = {2,7,9,3,1};
-    std::vector<int> v = {2, 7, 9};
+    std::vector<int> v = {183,219,57,193,94,233,202,154,65,240,97,234,100,249,186,66,90,238,168,128,177,235,50,81,185,165,217,207,88,80,112,78,135,62,228,247,211};
+    //std::vector<int> v = {2, 7, 9};
     printf("%d\n", Solution::rob(v));
     return(0);
 }    
