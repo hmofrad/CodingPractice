@@ -2,7 +2,7 @@
  (c) Mohammad Hasanzadeh Mofrad
  (e) m.hasanzadeh.mofrad@gmail.com
  Compile and run:
-     g++ -o queue queue.cpp && ./queue
+     g++ -o linked_list linked_list.cpp && ./linked_list
 */
 
 #include <stdio.h>
@@ -63,7 +63,7 @@ void deleteFromHead(Node** head) {
 }  
 
 
-void traverseQueue(Node* head) {
+void traverse(Node* head) {
     //Node* head = head;
     
     //if(head == nullptr) {
@@ -94,15 +94,15 @@ int main(int argc, char**argv) {
         head_ = head;
         appendToTail(&head_, i);
         head_ = head;
-        traverseQueue(head);
+        traverse(head);
     }
     head_ = head;
-    traverseQueue(head);
+    traverse(head);
     head_ = head;
     for(int i = 0; i < 10; i++) {
         deleteFromHead(&head);
     //head_ = head;
-        traverseQueue(head);
+        traverse(head);
     }
     
     
