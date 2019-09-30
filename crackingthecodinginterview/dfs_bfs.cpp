@@ -1,6 +1,6 @@
 /*
  * Problem: Depth First Search (DFS) and Breadth First Search (BFS)
- * (c) Mohammad Mofrad, 2019
+ * (c) Mohammad Hasanzadeh Mofrad, 2019
  * (e) m.hasanzadeh.mofrad@gmail.com
  * Compile and run: g++ -o dfs_bfs dfs_bfs.cpp && ./dfs_bfs
  */
