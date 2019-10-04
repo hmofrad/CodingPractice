@@ -46,8 +46,8 @@ public:
         //int l = 32/2;
         uint32_t r = 0;
         for(int i = 0; i < 16; i++) {
-            uint32_t j = mask << i;
-            uint32_t k = mask << (32 - i - 1);
+            uint32_t j = 1 << i;
+            uint32_t k = 1 << (32 - i - 1);
             uint32_t l = n & j;
             uint32_t m = n & k;
             //uint32_t o = l & m;
