@@ -24,8 +24,8 @@ struct ListNode {
 void traverse(ListNode* head) {
     if(head) {
         while(head) {
-            printf("[%d %p] ", head->val, head);
-            //printf("%d ", head->val);
+            //printf("[%d %p] ", head->val, head);
+            printf("%d ", head->val);
             head = head->next;
         }
         printf("\n");
@@ -33,11 +33,58 @@ void traverse(ListNode* head) {
     
 }
 
+void insert(ListNode** head, int value) {
+    if(*head) {
+        while((*head)->next)
+            *head = (*head)->next;
+        (*head)->next = new ListNode(value);
+    }
+    else
+        *head = new ListNode(value);
+}
+
+
 ListNode* deleteDuplicates(ListNode* head) {
-    ListNode* list = head;
+    ListNode* list = NULL;
     ListNode* curr = head;
-    ListNode* head1 = list;
-    //traverse(head1);
+    ListNode* head1 = NULL;
+    //traverse(list);
+    int j = 0;
+    if(curr) {
+        //insert(&list, curr->val);
+        list = new ListNode(curr->val);
+        curr = curr->next;
+        while(curr) {
+            bool tf = true;
+            int v = curr->val;
+            head1 = list;    
+            while(head1) {
+                if(head1->val == v) {
+                    tf = false;
+                    break;
+                }
+                head1 = head1->next;
+            }
+            if(tf) {
+                head1 = list;   
+                //insert(&head1, curr->val);
+                while(head1->next) {
+                    head1 = head1->next;
+                }
+                head1->next = new ListNode(v);
+            }
+            curr = curr->next; 
+        }
+    }
+    //else {
+        
+    //}
+    return(list);
+    //traverse(list);  
+    
+    
+    //exit(0);
+    /*
     int i = 0;
     if(curr) {
         while(curr->next) {
@@ -74,17 +121,10 @@ ListNode* deleteDuplicates(ListNode* head) {
         }
     }
     return(list);
+    */
 }
 
-void insert(ListNode** head, int value) {
-    if(*head) {
-        while((*head)->next)
-            *head = (*head)->next;
-        (*head)->next = new ListNode(value);
-    }
-    else
-        *head = new ListNode(value);
-}
+
 
 
 
@@ -144,7 +184,7 @@ int main(int argc, char** argv) {
     ListNode* list1 = deleteDuplicates(head);
     ListNode* head1 = list1;
     traverse(head1);
-    //printf("%p %p\n", head, head1);
+    printf("%p %p\n", head, head1);
     clear(&head1);
     head = NULL;
     list = NULL;
