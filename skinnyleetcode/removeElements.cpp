@@ -60,6 +60,43 @@ struct ListNode {
 	printf("\n");
  }
  
+ListNode* removeElements(ListNode* head, int val) {
+    ListNode* list = NULL;
+    ListNode* curr = head;
+    if(curr) {
+        while(curr) {
+            if(curr->val != val) {
+                list = new struct ListNode(curr->val);
+                curr = curr->next;
+                break;
+            }
+            curr = curr->next;
+        }
+        
+        while(curr) {
+            
+            bool tf = true;
+            //while(head1) {
+                if(curr->val == val) {
+                    tf = false;
+                   // break;
+                }
+                //head1 = head1->next;
+            //}
+            
+            if(tf) {
+                //head1 = list;
+                ListNode* head1 = list;
+                while(head1->next)
+                    head1 = head1->next;
+                head1->next = new struct ListNode(curr->val);
+            }
+            curr = curr->next;
+        }
+    }
+    return(list);
+}
+
  
 
 int main(int argc, char **argv)
@@ -71,14 +108,18 @@ int main(int argc, char **argv)
 	for(int i = 1; i < 10; i++) {
 		head = list;
 		enqueue(&head, i);
+        head = list;
+        enqueue(&head, i);
 	}
 	//printf("%d\n", list->val);
 	head = list;
 	traverse(head);
 	head = list;
-	dequeue(&head);
-	head = list;
-	traverse(head);
+    ListNode* head1 = removeElements(head, 5);
+    
+	//dequeue(&head);
+	//head = list;
+	traverse(head1);
 	//struct ListNode list(1);
 	//list.next = new struct ListNode(1);
 	//delete list.next;
