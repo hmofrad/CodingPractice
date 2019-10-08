@@ -17,10 +17,11 @@
 #include <queue>
 #include <numeric>
 #include <unordered_set>
+#include <cmath>
 
 bool isPrime(int n) {
     bool prime = true;
-    for(int i = 2; i <=n/2; i++) {
+    for(int i = 2; i <=std::sqrt(n); i++) {
         if((n % i) == 0) {
             prime = false;
             break;
