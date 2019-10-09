@@ -21,7 +21,6 @@ int findKthLargest(std::vector<int>& nums, int k) {
     //std::vector<int> kth_maxes(k);
     
     for(int i = 0; i < k; i++) {
-        printf("%d\n", i);
         int l = i;
         for(int j = i+1; j < nums.size(); j++) {
             if(nums[l] < nums[j]) {
