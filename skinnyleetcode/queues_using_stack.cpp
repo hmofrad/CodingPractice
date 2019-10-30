@@ -16,11 +16,11 @@
 #include <unordered_set>
 #include <stack>
 
-class MyStack {
+class MyQueue {
 public:
     std::stack<int> stack;
     int peek_v = 0;
-    MyStack() {
+    MyQueue() {
         
     }
     
@@ -79,7 +79,7 @@ public:
 
 
 int main(int argc, char **argv){
-    MyStack* obj = new MyStack();
+    MyQueue* obj = new MyQueue();
     obj->push(1);
     obj->push(2);
     obj->push(3);
