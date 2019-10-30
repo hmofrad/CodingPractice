@@ -52,27 +52,12 @@ std::vector<int> singleNumber(std::vector<int>& nums) {
     }
     for(auto& t: tmp) {
     //tmp.find('a')->second
-        printf("%d %d\n", t.first, t.second);
+//        printf("%d %d\n", t.first, t.second);
         if(t.second == 1) {
             nums1.push_back(t.first);
         }
     }
-    
-    /*
-    int max = *std::max_element(nums.begin(), nums.end());
-    int min = *std::min_element(nums.begin(), nums.end());
-    int s = max - min + 1;
-    std::vector<int> tmp(s);
-    for(auto& n: nums) {
-        tmp[n - min]++; 
-    }
-    
-    for(int i = 0; i < s; i++) {
-        if(tmp[i] == 1) {
-            nums1.push_back(i + min);
-        }
-    }
-    */
+
     return(nums1);    
 }
 
