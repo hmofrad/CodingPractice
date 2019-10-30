@@ -60,7 +60,7 @@ bool containsNearbyDuplicate(std::vector<int>& nums, int k) {
             i++;
             j = i + 1;
         }
-        printf("(%d %d)\n", i, j);
+        //printf("(%d %d)\n", i, j);
     }
     
     return(ret);
