@@ -23,7 +23,6 @@ int addDigits(int num) {
         do{
             ret += num%10;
             num = num/10;
-            printf("%d %d\n", num, ret);
         } while(num);
         if(ret < 10) {
             break;
@@ -33,8 +32,6 @@ int addDigits(int num) {
             ret = 0;
         }
     }
-    
-//    printf("%d %d\n", num, ret);
     return(ret);    
 }
 
