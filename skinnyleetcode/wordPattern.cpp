@@ -82,6 +82,17 @@ int main(int argc, char **argv){
     bool f = wordPattern(pattern, str);
     printf("wordPattern() ? %d\n", f);
     
+    
+    std::string parsed,input="text to be parsed";
+    std::stringstream input_stringstream(input);
+
+    if(getline(input_stringstream,parsed,' '))
+    {
+         printf("%s\n", input.c_str());
+    }
+    
+    
+    
     return(0);
 }
 
