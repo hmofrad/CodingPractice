@@ -19,6 +19,8 @@
 #include <map>
 #include <cmath>
 #include <unordered_map>
+#include<bits/stdc++.h> 
+
 /*
 bool increasingTriplet(std::vector<int>& nums) {
     bool triplet = false;
@@ -42,7 +44,7 @@ bool increasingTriplet(std::vector<int>& nums) {
     return(triplet);    
 }
 */
-
+/*
 bool increasingTriplet(std::vector<int>& nums) {
     if(nums.size() < 3) return(false);
     int n = nums.size();
@@ -60,10 +62,19 @@ bool increasingTriplet(std::vector<int>& nums) {
         }
         printf("\n");
     }
-    
+    return(false);
+}
+*/
 
-    
-    
+bool increasingTriplet(std::vector<int>& nums) {
+    if(nums.size() < 3) return(false);
+    int min1 = INT_MAX;
+    int min2 = INT_MAX;
+    for(int n: nums) {
+        if(n < min1) min1 = n;
+        if(n > min1) min2 = (n > min2) ? min2: n;//std::min_element(n, min2);
+        if(n > min2) return(true);
+    }
     return(false);
 }
 
@@ -71,7 +82,7 @@ bool increasingTriplet(std::vector<int>& nums) {
 int main(int argc, char **argv){
     std::vector<int> nums = {5,1,5,5,2,5,4};//{1,1,1,1,1,1};// {1,2,3,4,5}; //{5,4,3,2,1};//
     bool found = increasingTriplet(nums);
-    for(auto&n : nums)
+    for(auto& n : nums)
         printf("%d ", n);
     printf("? %d\n", found);
     
