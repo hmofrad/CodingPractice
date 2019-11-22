@@ -22,12 +22,20 @@
 #include<bits/stdc++.h> 
 
 bool isPerfectSquare(int num) {
+    /*
     unsigned int i=1;
     do {
         ;
     } while(i++ < num/i);
     i--;
-    return i*i==num;    
+    return i*i==num;  
+    */
+    unsigned int i=1;
+    while(i <= num/i) i++;
+    i--;
+    return i*i==num;  
+    
+    
 }
 
 int main(int argc, char **argv){
