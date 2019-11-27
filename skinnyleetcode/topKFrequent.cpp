@@ -71,7 +71,6 @@ std::vector<int> topKFrequent(std::vector<int>& nums, int k) {
     for(int i = 1; i < nums.size(); i++) {
         if(nums[i] == nums[i-1]) {
             vals.back()++;
-            ;
         }
         else {
             keys.push_back(nums[i]);
@@ -79,10 +78,10 @@ std::vector<int> topKFrequent(std::vector<int>& nums, int k) {
         }
     }
     
-    for(int i = 0; i < keys.size(); i++) {
-        printf("%d %d %d\n", i, keys[i], vals[i]);
+    //for(int i = 0; i < keys.size(); i++) {
+    //    printf("%d %d %d\n", i, keys[i], vals[i]);
         
-    }
+    //}
     
     for(auto &k: topk) {
         int idx = 0;
@@ -97,8 +96,6 @@ std::vector<int> topKFrequent(std::vector<int>& nums, int k) {
         vals[idx] = 0;
     }
 
-    
-    
     return(topk);
 }
         
