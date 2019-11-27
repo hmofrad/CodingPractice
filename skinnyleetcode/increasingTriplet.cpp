@@ -71,6 +71,7 @@ bool increasingTriplet(std::vector<int>& nums) {
     int min1 = INT_MAX;
     int min2 = INT_MAX;
     for(int n: nums) {
+        printf("%d %d %d\n", min1, min2, n);
         if(n < min1) min1 = n;
         if(n > min1) min2 = (n > min2) ? min2: n;//std::min_element(n, min2);
         if(n > min2) return(true);
