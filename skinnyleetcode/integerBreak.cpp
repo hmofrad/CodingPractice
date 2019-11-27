@@ -31,7 +31,8 @@ int integerBreak(int n) {
         //int mid = (i/2) + 1;
         int ans = 0;
         for(int j = 1; j < i; j++) {
-            dp[i] = std::max(std::max(dp[i],(j*(i-j))), dp[j]*(i-j));
+            dp[i] = std::max(dp[i], std::max(dp[j], j)*(i-j));
+            //dp[i] = std::max(std::max(dp[i],(j*(i-j))), dp[j]*(i-j));
             //ans = std::max(ans, std::max(dp[j], j) * std::max(dp[i-j], i-j));
         }
         //dp[i] = ans;
