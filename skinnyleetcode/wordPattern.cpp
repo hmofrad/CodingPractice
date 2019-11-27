@@ -73,24 +73,40 @@ bool wordPattern(std::string pattern, std::string str) {
     
     return(tf);
 }
-    
+    #include <sstream>
+
 int main(int argc, char **argv){
     std::string pattern = "abba";
     std::string str = "dog cat cat dog";
     
-    printf("%s, %s\n", pattern.c_str(), str.c_str());
-    bool f = wordPattern(pattern, str);
-    printf("wordPattern() ? %d\n", f);
+    //printf("%s, %s\n", pattern.c_str(), str.c_str());
+    //bool f = wordPattern(pattern, str);
+    //printf("wordPattern() ? %d\n", f);
     
-    
-    std::string parsed,input="text to be parsed";
+    /*
+    std::string parsed; 
+    std::string input="text to be parsed";
     std::stringstream input_stringstream(input);
 
-    if(getline(input_stringstream,parsed,' '))
+    if(getline(input_stringstream, parsed, ' '))
     {
-         printf("%s\n", input.c_str());
+         printf("%s\n", parsed.c_str());
     }
-    
+    */
+
+//const char delim0 = '>=+';    
+   
+std::string input = "Alfa=,+Bravo=,+Charlie=,+Delta";
+std::string delimiter = "="; 
+std::istringstream ss(input);
+std::string token;
+std::string::iterator it;
+while(std::getline(ss, token, *(it = delimiter.begin()))) {
+    while(*(++it)) ss.get();
+    std::cout << token << " " << '\n';
+}
+
+
     
     
     return(0);
