@@ -115,7 +115,6 @@ void gameOfLife(std::vector<std::vector<int>>& board) {
         }
     }
     board = board1;
-    
 }
 
 int main(int argc, char **argv){
