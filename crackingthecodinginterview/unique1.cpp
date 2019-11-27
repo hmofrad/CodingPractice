@@ -1,7 +1,7 @@
 /*
 Cracking the coding interview: Problem 1.1
 Compile and run: 
-        g++ -o unique1 unique.c && ./unique
+        g++ -o unique1 unique1.c && ./unique1
 (c) Mohammad Hasanzadeh mofrad, 2019
 (e) m.hasanzadeh.mofrad@gmail.com
 */
