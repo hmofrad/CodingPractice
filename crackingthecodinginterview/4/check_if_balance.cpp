@@ -1,9 +1,9 @@
 /*
- *  Problem: Implement a function to check if a binary tree is balanced. 
+ *  Cracking the coding interview: Problem 4.1: Implement a function to check if a binary tree is balanced. 
              A tree is balanced if the heights of the two subtrees of any node never differ by more than one. 
  *  Compile: g++ -o check_if_balance check_if_balance.cpp -g -Wall -Werror
  *  Execute: ./check_if_balance
- *  (c) Mohammad Mofrad, 2018
+ *  (c) Mohammad Hasanzadeh Mofrad, 2019
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */
  
