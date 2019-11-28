@@ -1,6 +1,6 @@
 /*
- * Cracking the coding interview: Problem 2.2
- * Compile and run:  g++ -o kth_to_last_element_of_linked_list kth_to_last_element_of_linked_list.cpp && ./kth_to_last_element_of_linked_list
+ * Cracking the coding interview: Problem 2.2: Extract the k last elements of a linked list
+ * Compile and run:  g++ -o k_last_elements k_last_elements.cpp && ./k_last_elements
  * (c) Mohammad Hasanzadeh mofrad, 2019
  * (e) m.hasanzadeh.mofrad@gmail.com
 */
@@ -18,7 +18,7 @@ struct Node {
 };
 
 
-struct Node* kth_to_last(Node* head, int kth) {
+struct Node* k_last_elements(Node* head, int kth) {
     
     int n = 0;
     Node* head1 = head;
@@ -75,7 +75,7 @@ int main(int argc, char** argv) {
     head->next->next->next->next->next->next = new Node(6);
     head->next->next->next->next->next->next->next = new Node(7);
     head->next->next->next->next->next->next->next->next = new Node(8);
-    Node* head1 = kth_to_last(head, kth);
+    Node* head1 = k_last_elements(head, kth);
     
     while(head1) {
         printf("%d ", head1->data);
