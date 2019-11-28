@@ -1,8 +1,8 @@
 /*
- * Problem: Bit manipulation (indexing start at zero and is inclusive)
+ * Cracking the coding interview: Bit manipulation (indexing start at zero and is inclusive)
+ * Compile and run: g++ -o bits bits.cpp && ./bits
  * (c) Mohammad Hasanzadeh Mofrad, 2019
  * (e) m.hasanzadeh.mofrad@gmail.com
- * Compile and run: g++ -o bits bits.cpp && ./bits
  */
  
 #include <stdio.h>
