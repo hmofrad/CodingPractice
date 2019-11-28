@@ -1,9 +1,8 @@
 /*
-Cracking the coding interview: Problem 1.1
-Compile and run: 
-        g++ -o unique1 unique1.c && ./unique1
-(c) Mohammad Hasanzadeh mofrad, 2019
-(e) m.hasanzadeh.mofrad@gmail.com
+ * Cracking the coding interview: Problem 1.1: Determine if a string has unique characters
+ * Compile and run: g++ -o unique unique.c && ./unique
+ * (c) Mohammad Hasanzadeh mofrad, 2019
+ * (e) m.hasanzadeh.mofrad@gmail.com
 */
 
 
@@ -13,6 +12,28 @@ Compile and run:
 #include <string>
 #include <vector>
 #include <algorithm>
+
+/*
+bool unique(std::string str)
+{
+    bool cmp = true;
+    int sz = str.size();
+    for(int i = 0; i < sz - 1; i++)
+    {
+        for(int j = i + 1; j < sz; j++)
+        {
+            if(str[i] == str[j])
+            {
+                cmp = false;
+                break;
+            }
+        }
+        if(not cmp)
+            break;
+    }
+    return(cmp);
+}
+*/
 
 std::vector<char> unique(std::string str) {
     std::vector<char> u;

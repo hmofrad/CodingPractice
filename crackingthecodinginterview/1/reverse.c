@@ -1,8 +1,8 @@
 /*
-Cracking the coding interview: Problem 1.2
-Compile and run:  gcc -o reverse reverse.c && ./reverse
-(c) Mohammad Hasanzadeh mofrad, 2019
-(e) m.hasanzadeh.mofrad@gmail.com
+  * Cracking the coding interview: Problem 1.2: Reverse a string
+  * Compile and run:  gcc -o reverse reverse.c && ./reverse
+  * (c) Mohammad Hasanzadeh mofrad, 2019
+  * (e) m.hasanzadeh.mofrad@gmail.com
 */
 
 #include <stdlib.h>
