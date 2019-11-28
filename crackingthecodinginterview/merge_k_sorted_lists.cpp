@@ -2,7 +2,7 @@
  *  Problem: Merge K sorted lists
  *  Compile: g++ -o merge_k_sorted_lists merge_k_sorted_lists.cpp -std=c++11
  *  Execute: ./merge_k_sorted_lists
- *  (c) Mohammad Mofrad, 2018
+ *  (c) Mohammad Hasanzadeh Mofrad, 2019
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */
  
