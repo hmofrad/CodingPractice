@@ -1,11 +1,10 @@
 /*
- *  Problem: Describe how you could use a single array to implement 3 stacks
- *  Compile: g++ -o 3stacks 3stacks.cpp -g -Wall -Werror
- *  Execute: ./3stacks
- *  (c) Mohammad Mofrad, 2018
- *  (e) m.hasanzadeh.mofrad@gmail.com
- */
- 
+ * Cracking the coding interview: Problem 3.1: How to use a single array to implement three stacks
+ * Compile and run: g++ -o 3stacks 3stacks.cpp -g -Wall -Werror && ./3stacks
+ * (c) Mohammad Hasanzadeh mofrad, 2019
+ * (e) m.hasanzadeh.mofrad@gmail.com
+*/
+
 #include <iostream> 
 #include <stdlib.h>
 #include <stdio.h>
@@ -82,8 +81,4 @@ int main(int argc, char **argv)
         }
         printf("\n");
     }
-    
-    
-    
-    
 }
