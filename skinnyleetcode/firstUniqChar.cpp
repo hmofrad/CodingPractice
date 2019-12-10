@@ -18,10 +18,10 @@ int firstUniqChar(std::string s) {
         alpha[c-'a']++;
     }
     
-    for(auto a: alpha) {
-        printf("%d ", a);
-    }
-    printf("\n");
+    //for(auto a: alpha) {
+    //    printf("%d ", a);
+    //}
+    //printf("\n");
     
     
     for(uint32_t i = 0; i < s.size(); i++) {
@@ -29,8 +29,6 @@ int firstUniqChar(std::string s) {
         if(alpha[c-'a'] == 1)
             return(i);
     }
-    
-
     
     return(-1);    
 }
