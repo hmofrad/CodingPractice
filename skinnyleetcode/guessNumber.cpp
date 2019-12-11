@@ -77,9 +77,6 @@ int guessNumber(int n) {
     uint32_t mid = (low+high)/2;
     int g = 0;
     while((g = guess(mid)) != 0) {
-        //g = guess(mid);
-        //if(!g) return(mid);
-        printf("%d %d %d %d\n", low, mid, high, g);
         if(g == -1) {
             high = mid-1;
         }
@@ -88,7 +85,6 @@ int guessNumber(int n) {
         }
         mid = (low+high)/2;
     }
-    
     return(mid);    
 }
 
