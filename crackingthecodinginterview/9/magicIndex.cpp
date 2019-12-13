@@ -1,5 +1,5 @@
 /*
- *  Cracking the coding interview: Problem 9.2: Possible path from (0,0) to (x,y)
+ *  Cracking the coding interview: Problem 9.3: Magic Index a[i] = i
  *  Compile & run: g++ -o magicIndex magicIndex.cpp -g -Wall -std=c++11 -fsanitize=address  && ./magicIndex
  *  (c) Mohammad Hasanzadeh Mofrad, 2019
  *  (e) m.hasanzadeh.mofrad@gmail.com
