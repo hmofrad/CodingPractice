@@ -1,5 +1,5 @@
 /*
- * Cracking the coding interview: Problem 2.3: Partition a linked list based on x
+ * Cracking the coding interview: Problem 2.4: Partition a linked list based on x
  * Compile and run:  g++ -o partition partition.cpp -g -Wall  -std=c++11 -fsanitize=address && ./partition
  * (c) Mohammad Hasanzadeh mofrad, 2019
  * (e) m.hasanzadeh.mofrad@gmail.com
