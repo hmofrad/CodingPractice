@@ -1,5 +1,5 @@
 /*
- * Cracking the coding interview: Problem 3.4: Implement a queue using 2 stacks
+ * Cracking the coding interview: Problem 3.5: Implement a queue using 2 stacks
  * Compile and run: g++ -o queue_using_2stacks queue_using_2stacks.cpp -g -Wall -std=c++11 -fsanitize=address  && ./queue_using_2stacks
  * (c) Mohammad Hasanzadeh Mofrad, 2019
  * (e) m.hasanzadeh.mofrad@gmail.com
