@@ -1,6 +1,6 @@
 /*
   * Cracking the coding interview: Problem 1.4: Replace spaces with %20
-  * Compile and run:  g++ -o replace replace.c -g -Wall  -std=c++11 -fsanitize=address && ./replace
+  * Compile and run:  g++ -o replace replace.cpp -g -Wall  -std=c++11 -fsanitize=address && ./replace
   * (c) Mohammad Hasanzadeh mofrad, 2019
   * (e) m.hasanzadeh.mofrad@gmail.com
 */
