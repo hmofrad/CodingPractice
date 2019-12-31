@@ -1,5 +1,5 @@
 /*
- *  Cracking the coding interview: Problem 4.4: Check if a binary tree is a binary search tree
+ *  Cracking the coding interview: Problem 4.5: Check if a binary tree is a binary search tree
  *  Compile & run: g++ -o if_binary_search_tree if_binary_search_tree.cpp -g -Wall -std=c++11 -fsanitize=address  && ./if_binary_search_tree
  *  (c) Mohammad Hasanzadeh Mofrad, 2019
  *  (e) m.hasanzadeh.mofrad@gmail.com
