@@ -1,5 +1,5 @@
 /*
- *  Cracking the coding interview: Problem 5.5: How many bit flips you need to convertt integer A to B
+ *  Cracking the coding interview: Problem 5.6: How many bit flips you need to convertt integer A to B
  *  Compile & run: g++ -o SwapOddsbyEvenBits SwapOddsbyEvenBits.cpp -g -Wall -std=c++11 -fsanitize=address && ./SwapOddsbyEvenBits
  *  (c) Mohammad Hasanzadeh Mofrad, 2019
  *  (e) m.hasanzadeh.mofrad@gmail.com
