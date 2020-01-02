@@ -1,7 +1,7 @@
 /*
   * Cracking the coding interview: Problem 1.8: Is a string, a rotation of another string
   * Compile and run:  g++ -o isRotation isRotation.cpp -g -Wall -std=c++11 -fsanitize=address && ./isRotation
-  * (c) Mohammad Hasanzadeh mofrad, 2019
+  * (c) Mohammad Hasanzadeh mofrad, 2020
   * (e) m.hasanzadeh.mofrad@gmail.com
 */
 
