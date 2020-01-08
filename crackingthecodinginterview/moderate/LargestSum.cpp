@@ -23,14 +23,15 @@ int largestSum(std::vector<int> nums) {
             int s = 0;
             for(int k = j; k < i+j+1; k++) {
                 s += nums[k];
-                printf("i=%d j=%d k=%d\n", i, j, k);
+                
                 
             //int ss = std::accumulate(nums.begin(), nums.begin()+i, 0);
             //if(ss > sum) {
               //     sum = ss;
                 //   idx = j;
             //} 
-            }            
+            }         
+            printf("i=%d j=%d s=%d\n", i, j, s);            
             if(s > sum) {
                 sum = s;
             }
@@ -41,10 +42,25 @@ int largestSum(std::vector<int> nums) {
     return(sum);
 }
 
+int largestSum1(std::vector<int> nums) {
+    int maxsum = 0;
+    int sum = 0;
+    for(int i = 0; i < nums.size(); i++) {
+        sum += nums[i];
+        if(maxsum < sum) {
+            maxsum = sum;
+        }
+        else if(sum < 0){
+            sum = 0;
+        }
+    }
+    return(sum);
+}
 
 
 int main(int argc, char** argv) {
-    std::vector<int> nums = {2, -8, 3, -2, 4, -10};
+    //std::vector<int> nums = {5, -9, 6, -2, 3};
+    std::vector<int> nums = {2, 3, -8, -1, 2, 4, -2, 3};
     
     
     int sum = largestSum(nums);
