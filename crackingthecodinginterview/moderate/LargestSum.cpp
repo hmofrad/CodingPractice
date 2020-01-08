@@ -13,7 +13,7 @@
 
 
 
-std::vector<int> largestSum(std::vector<int> nums) {
+int largestSum(std::vector<int> nums) {
     std::vector<int> nums1;
     int sum = INT_MIN;
     int idx = 0;
@@ -38,17 +38,19 @@ std::vector<int> largestSum(std::vector<int> nums) {
         
     }
     printf("%d\n", sum);
-    return(nums1);
+    return(sum);
 }
+
+
 
 int main(int argc, char** argv) {
     std::vector<int> nums = {2, -8, 3, -2, 4, -10};
     
     
-    std::vector<int> nums1 = largestSum(nums);
-    for(auto n: nums1) {
-        printf("%d ", n);
-    }
-    printf("\n");
+    int sum = largestSum(nums);
+    //for(auto n: nums1) {
+      //  printf("%d ", n);
+    //}
+    printf("%d\n", sum);
     return(0);
 }
