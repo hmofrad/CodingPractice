@@ -38,10 +38,8 @@ void traverse2(Node* head) {
 
 Node* flatter(Node* head, Node* next) {
     while(head->next) {
-        printf("%d %p\n", head->val, head->next);
         if(head->child) {
             head->next->prev = flatter(head->child, head->next);
-            //printf(">%d %p\n", head->val, head->next);
             head->next->prev->next = head->next;
             head->next = head->child;
             head->next->prev = head;
