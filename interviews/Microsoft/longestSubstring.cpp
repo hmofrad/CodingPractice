@@ -32,7 +32,7 @@ std::string longestSubStr(std::string s) {
             printf("i=%d c=%c,%d p=%c,%d\n", i, curr, counts[curr-'a'], prev, counts[prev-'a']);
             if(counts[prev-'a'] > 2) {
                 uint32_t j = counts[prev-'a'];
-                int i2 = i - j + 2;
+                int i2 = (i - j + 2) - i1;
                 std::string str = s.substr(i1, i2);
                 printf("[%s] i=%d j=%d i1=%d i2=%d\n", str.c_str(), i, j, i1, i2);
                 if(str.size() > longest.size()) {
@@ -47,7 +47,7 @@ std::string longestSubStr(std::string s) {
             }
             else {
                 if((i+1) == s.size()) {
-                    i2 = i;
+                    i2 = (i+1) - i1;
                     std::string str = s.substr(i1, i2);
                     printf("%s\n", str.c_str());
                     if(str.size() > longest.size()) {
