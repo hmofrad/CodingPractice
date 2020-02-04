@@ -99,7 +99,14 @@ void traverse_q(struct Queue* head) {
    }
 }
 
-
+int size_q(struct Queue* head) {
+    int sz = 0;
+   while(head) {
+       sz++;
+       head = head->next;
+   }
+   return(sz);
+}
 
 
 
@@ -111,46 +118,63 @@ void traverse(struct Node* root) {
     }
 }
 
-int my_pow(int n, int p) {
-    int v = (n == 0) ? 0 : 1;
-    for(int i = 0; i < p; i++) {
-        v *= n;
+void traverse1(struct Node* root) {
+    if(root) {
+        printf("[%d ", root->data);
+        if(root->nextRight) {
+            printf("%d] ", root->nextRight->data);
+        }
+        else {
+            printf("] ");
+        }
+        traverse1(root->left);
+        traverse1(root->right);
     }
-    return(v);
 }
+
 
 void BFS(struct Node* root) {
     struct Queue* q = NULL;
     struct Queue* h = NULL;
-    int i = 1;
-    int j = 0;
-    int k = 0;
+    int level = 0;
     if(root) {
         enqueue(&q, root);
         h = q;
         //i++;
         while(q) {
-            struct Node* n = peek(q);
-            if(n->left) {
-                h = q;
-                enqueue(&h, n->left);
-                //i++;
-                j++;
-            }
-            if(n->right) {
-                h = q;
-                enqueue(&h, n->right);
-                //i++;
-                j++;
-            }
+            printf("level=%d\n", level);
+            int level_sz = size_q(q);
             
-            printf("%d %d %d %d\n", n->data, i, j, k);
-            if(i == my_pow(2,k)) {
-                k++;
+            while(level_sz--) {
+                struct Node* n = peek(q);
+                printf("level_sz=%d %d\n",level_sz, n->data);
+                if(n->left) {
+                    h = q;
+                    enqueue(&h, n->left);
+                }
+                
+                if(n->right) {
+                    h = q;
+                    enqueue(&h, n->right);
+                }
+                
+                if(q->next && level_sz) {
+                    n->nextRight = q->next->bst_node;
+                }
+                else {
+                    n->nextRight = NULL;
+                }
+                dequeue(&q);
             }
-            n->nextRight = NULL;
+            level++;
+            
+            
+            //if(i == my_pow(2,k)) {
+              //  k++;
+            //}
+            //n->nextRight = NULL;
             //i *= 2;
-            dequeue(&q);
+
         }   
     }
     
@@ -188,6 +212,8 @@ int main(int argc, char **argv){
     printf("\n");
     
     BFS(root);
+    traverse1(root);
+    printf("\n");
     
     free(root->left->left);
     free(root->left->right);
