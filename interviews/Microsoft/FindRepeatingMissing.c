@@ -1,6 +1,5 @@
 /*
  *  Problem: https://www.geeksforgeeks.org/find-a-repeating-and-a-missing-number/
- *  Detect and Remove Loop in a Linked List
  *  Compile: gcc -o FindRepeatingMissing FindRepeatingMissing.c -g -Wall -fsanitize=address && ./FindRepeatingMissing    
  *  (c) Mohammad Hasanzadeh Mofrad, 2020
  *  (e) m.hasanzadeh.mofrad@gmail.com
