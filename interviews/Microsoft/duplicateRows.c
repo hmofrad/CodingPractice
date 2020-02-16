@@ -23,6 +23,53 @@ void printDuplicates(int mat[][7], int m, int n) {
     }
 }
 
+#define ALPHABET_SIZE 2
+
+struct Trie{
+    char leaf;
+    struct Trie* children[ALPHABET_SIZE];  
+};
+
+struct Trie* create_new_trie_node() {
+    struct Trie* trie = (struct Trie*) malloc(sizeof(struct Trie));
+    trie->leaf = 0;
+    for(int i = 0; i < ALPHABET_SIZE; i++) {
+        trie->children[i] = NULL;
+    }
+    return(trie);
+}
+
+
+char insert(struct Trie** head, int arr[], int m) {
+    if(*head == NULL) {
+        *head = create_new_trie_node();
+    }
+    struct Trie* current = *head;
+    for(int i = 0; i < m; i++) {    
+        if(current->children[arr[i]] == NULL) {
+            current->children[arr[i]] = create_new_trie_node();
+        }
+        current = current->children[arr[i]];
+    }
+
+    if(current->leaf) return(0);
+    
+    return(current->leaf = 1);
+}
+
+void printDuplicates1(int mat[][7], int m, int n) {
+    struct Trie* head = NULL;
+    for(int i = 0; i < m; i++) {
+        if(insert(&head, mat[i], n) == 0) {
+            printf("%dth row is duplicate\n", i);
+        }
+        else {
+            printf("%dth row is not duplicate\n", i);
+        }
+    }
+}
+
+
 
 int main(int argc, char** argv){
     int m = 6;
@@ -36,12 +83,9 @@ int main(int argc, char** argv){
     
     int c = sizeof(mat[0])/sizeof(mat[0][0]) ;
     int r = sizeof(mat)/sizeof(mat[0]);
-    printf("row=%d col=%d\n", r, c);
-    
-    
-    
-    
-    printDuplicates(mat, r, c);    
+    //printf("row=%d col=%d\n", r, c);
+    //printDuplicates(mat, r, c);    
+    printDuplicates1(mat, r, c);    
     
     return(0);
 }
