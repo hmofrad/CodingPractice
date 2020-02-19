@@ -34,24 +34,28 @@ int get_min(struct Node* root) {
     return(min);
 }
 
-/*
-int successor1(struct Node* root, struct Node* node, int i) {
+
+int successor1(struct Node* root, struct Node* node, struct Node* succ) {
     
     if(root) {
         if(root->data == node->data) {
-            if(root->right) return(successor1(root->right->data, node, 1);
+            
+            if(root->right) {
+                succ = root->right->data;
+                return(root->right->data);
+            }
             else return(-1);
         }
         else {
-            return(successor1(root->left, node, i));
-            return(successor1(root->right, node, i));
+            return(successor1(root->left, node, succ));
+            return(successor1(root->right, node, succ));
         }
     }
     else {
         return(-1);
     }
 }
-*/
+
 
 
 int successor(struct Node* root, struct Node* node) {
