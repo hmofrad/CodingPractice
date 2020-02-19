@@ -35,26 +35,6 @@ int get_min(struct Node* root) {
 }
 
 
-int successor1(struct Node* root, struct Node* node, struct Node* succ) {
-    
-    if(root) {
-        if(root->data == node->data) {
-            
-            if(root->right) {
-                succ = root->right->data;
-                return(root->right->data);
-            }
-            else return(-1);
-        }
-        else {
-            return(successor1(root->left, node, succ));
-            return(successor1(root->right, node, succ));
-        }
-    }
-    else {
-        return(-1);
-    }
-}
 
 
 
@@ -104,7 +84,10 @@ int main(int argc, char** argv){
     
     traverse(root); printf("\n");
     printf("%d\n", get_min(root));
+
     printf("%d\n", successor(root, root->left->right->right));
+    
+    
     free(root->left->right->right);
     free(root->left->right->left);
     free(root->left->right);
