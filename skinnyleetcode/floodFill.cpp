@@ -50,7 +50,9 @@ void paint(std::vector<std::vector<int>>& image, int i, int j, int newColor, int
 
 
 std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, int sr, int sc, int newColor) {
-    paint(image, sr, sc, newColor, image[sr][sc]);    
+    int oldColor = image[sr][sc]; 
+    if(newColor != oldColor)
+        paint(image, sr, sc, newColor, image[sr][sc]);    
     return(image);
 }
 
