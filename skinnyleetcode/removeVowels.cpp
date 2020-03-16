@@ -1,6 +1,5 @@
 /*
  *  Problem:https://leetcode.com/problems/remove-vowels-from-a-string/
- *  Compile: g++ -o removeVowels removeVowels.cpp -std=c++11 -g -Wall -fsanitize=address && ./removeVowels
  *  (c) Mohammad Hasanzadeh Mofrad, 2020
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */
