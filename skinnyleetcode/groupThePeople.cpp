@@ -7,11 +7,16 @@
 class Solution {
 public:
     vector<vector<int>> groupThePeople(vector<int>& groupSizes) {
-        std::map<int, std::deque<int>> map;
+        vector<vector<int>> out;
+        std::map<int, std::vector<int>> map;
         for(int i = 0; i < groupSizes.size(); i++) {
             map[groupSizes[i]].push_back(i);
+            if(map[groupSizes[i]].size() == groupSizes[i]) {
+                out.push_back(map[groupSizes[i]]);
+                map[groupSizes[i]].clear();
+            }
         }
-        vector<vector<int>> out;
+        /*
         int k = 0;
         for(auto m: map) {
             auto& vec = m.second;
@@ -34,6 +39,7 @@ public:
                 }
             }
         }
+        */
         return(out);
     }
 };
