@@ -44,7 +44,7 @@ std::vector<int> smallerNumbersThanCurrent(std::vector<int>& nums) {
         for(int i = 0; i < m; i++) {
             auto& v = map2.find(nums[i])->second;
             smallers[v.front()] = m - map1.find(nums[i])->second - i;
-            printf("%d %d %d %d\n", i, nums[i], v.front(), v.size());
+            //printf("%d %d %d %d\n", i, nums[i], v.front(), v.size());
             v.pop_front();
             map1[nums[i]]--;
         }
