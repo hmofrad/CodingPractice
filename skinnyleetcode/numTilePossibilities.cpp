@@ -1,7 +1,7 @@
 /*
  *  https://leetcode.com/problems/letter-tile-possibilities/
  *  Compile & run: g++ -o numTilePossibilities numTilePossibilities.cpp -g -Wall -std=c++11 -fsanitize=address  && ./numTilePossibilities
- *  (c) Mohammad Hasanzadeh Mofrad, 2019
+ *  (c) Mohammad Hasanzadeh Mofrad, 2020
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */
 
