@@ -1,6 +1,5 @@
 /*
  *  https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/submissions/
- *  g++ -o numUniqueEmails numUniqueEmails.cpp && ./numUniqueEmails
  *  (c) Mohammad Hasanzadeh Mofrad, 2020
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */

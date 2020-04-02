@@ -1,6 +1,5 @@
 /*
  *  https://leetcode.com/problems/reduce-array-size-to-the-half/solution/
- *  g++ -o numUniqueEmails numUniqueEmails.cpp && ./numUniqueEmails
  *  (c) Mohammad Hasanzadeh Mofrad, 2020
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */

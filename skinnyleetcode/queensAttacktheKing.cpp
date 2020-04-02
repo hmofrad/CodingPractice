@@ -1,6 +1,5 @@
 /*
  *  https://leetcode.com/problems/queens-that-can-attack-the-king/submissions/
- *  g++ -o numUniqueEmails numUniqueEmails.cpp && ./numUniqueEmails
  *  (c) Mohammad Hasanzadeh Mofrad, 2020
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */

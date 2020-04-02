@@ -1,6 +1,5 @@
 /*
  *  https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/submissions/
- *  g++ -o numUniqueEmails numUniqueEmails.cpp && ./numUniqueEmails
  *  (c) Mohammad Hasanzadeh Mofrad, 2020
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */

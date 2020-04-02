@@ -1,6 +1,5 @@
 /*
  *  https://leetcode.com/problems/middle-of-the-linked-list/submissions/
- *  g++ -o numUniqueEmails numUniqueEmails.cpp && ./numUniqueEmails
  *  (c) Mohammad Hasanzadeh Mofrad, 2020
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */

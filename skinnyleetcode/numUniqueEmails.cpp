@@ -1,6 +1,5 @@
 /*
  *  https://leetcode.com/problems/unique-email-addresses/solution/
- *  g++ -o numUniqueEmails numUniqueEmails.cpp && ./numUniqueEmails
  *  (c) Mohammad Hasanzadeh Mofrad, 2020
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */
