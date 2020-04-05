@@ -3,13 +3,6 @@
  *  (c) Mohammad Hasanzadeh Mofrad, 2020
  *  (e) m.hasanzadeh.mofrad@gmail.com
  */
- #include <stdio.h>
- #include <stdlib.h>
- #include <iostream>
- #include <vector>
-#include <string> 
-#include <unordered_map>    
-using namespace std;
 
 std::string filter(std::string email) {
         std::string raw;
