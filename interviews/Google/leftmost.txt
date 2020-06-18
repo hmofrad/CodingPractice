@@ -1,0 +1,117 @@
+Please use this Google doc during your interview (your interviewer will see what you write here). To free your hands for typing, we recommend using a headset or speakerphone.
+
+
+
+a matrix of 1 and 0
+each row, x 0 followed by y 1
+
+0 0 0 0 
+0 0 1 1
+1 1 1 1
+0 0 0 1
+
+0 0 0 0 
+0 0 1 1
+0 1 1 1
+1 1 1 1
+
+0 0 0 1 
+0 0 0 0
+0 0 0 0
+1 1 1 1
+
+→? return 0
+no 1 in the matrix → -1
+
+find the left most column that has 1, return the column index.
+
+target complexity is O(n)
+int LeftMost(vector<vector<int>> matrix, int row, int col) {
+	int nrows = matrix.size();
+int ncols = nrows ? matrix[0].size() : 0;
+if(row <0 or row>=rows or col<0 or col>=ncols) return INT_MAX;
+
+int c = matrix[row][col] ? col : INT_MAX;
+if(row+1<nrows) {
+	c = min(c, LeftMost(matrix, row+1, col));
+}
+if(col-1>0) {
+	c = min(c, LeftMost(matrix, row, col-1);
+}
+
+
+return c;
+}
+
+int lefmost = INT_MAX;
+int LeftMost(vector<vector<int>> matrix, int row, int col) {
+	int nrows = matrix.size();
+int ncols = nrows ? matrix[0].size() : 0;
+if(row <0 or row>=rows or col<0 or col>=ncols) return INT_MAX;
+//if(matrix[row][col]==0) return INT_MAX;
+//if(col>lefmost) return INT_MAX;
+int l = min({col, leftMost(matrix, row+1, col), leftMost(matrix, row, col-1)});
+	return l;
+}
+
+
+
+
+void main(){
+//	matrix
+int nrows = matrix.size();
+int ncols = nrows ? matrix[0].size() : 0;
+//int leftmost = INT_MAX;
+for(int i = 0; i < norws; i++) {
+for(int j = 0; j < ncols; j++) {
+	if(matrix[i][j]== 1 and leftmost != INT_MAX and j<leftmost) {
+leftmost=min(leftmost,left_most(matrix, i, j));
+}
+if(leftmost == 0) break;
+}
+if(leftmost == 0) break;
+}
+	return leftmost==INT_MAX ? -1 : leftmost;
+
+}
+
+
+int LeftMost(vector<vector<int>> matrix, int row, int col) {
+	int nrows = matrix.size();
+    int ncols = nrows ? matrix[0].size() : 0;
+    if(row <0 or row>=nrows or col<0 or col>=ncols) return INT_MAX;
+
+    int c = matrix[row][col] ? col : INT_MAX;
+    if(row+1<nrows) {
+        c = min(c, LeftMost(matrix, row+1, col));
+    }
+    if(col-1>0) {
+        c = min(c, LeftMost(matrix, row, col-1));
+    }
+    return c;
+}
+
+int main() {
+    
+    std::vector<std::vector<int>> matrix = {{0,0,0,0}, {0,0,1,1}, {0,1,1,1}, {0,0,0,0}};
+    //std::vector<std::vector<int>> matrix = {{0,0,0,0}, {0,0,0,0}, {0,0,0,0}, {0,0,0,0}};
+    
+    int nrows = matrix.size();
+    int ncols = nrows ? matrix[0].size() : 0;
+    int leftmost = INT_MAX;
+    for(int i = 0; i < nrows; i++) {
+        for(int j = 0; j < min(ncols, leftmost); j++) {
+            if(matrix[i][j]== 1) {
+                leftmost=min(leftmost, LeftMost(matrix, i, j));
+            }
+            if(leftmost == 0) break;
+        }
+        if(leftmost == 0) break;
+    }
+    
+    leftmost = leftmost==INT_MAX ? -1 : leftmost;
+
+    std::cout << "Hello World!\n" << leftmost << std::endl;
+}
+
+
