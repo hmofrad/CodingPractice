@@ -115,3 +115,25 @@ int main() {
 }
 
 
+int search(std::vector<std::vector<int>>& mat) {
+    int nrows = mat.size();
+    int ncols = nrows ? mat[0].size() : 0;
+    int r = 0;
+    int c = ncols-1;
+    while(r<nrows and c >= 0) {
+        printf("%d %d %d\n", r, c, mat[r][c]);
+        if(mat[r][c]==1) c--;
+        else r++;
+    }
+    return c==ncols-1 ? -1 : c+1;
+}
+
+int main() {
+    std::vector<std::vector<int>> mat = {{0, 0, 0, 1},
+                                         {0, 0, 1, 1},
+                                         {0, 1, 1, 1},
+                                         {0, 0, 0, 0}};
+    
+    std::cout << search(mat) << std::endl;
+}
+

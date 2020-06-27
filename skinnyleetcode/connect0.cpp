@@ -26,32 +26,41 @@ class Solution {
 public:
     Node* connect(Node* root) {
         if(root == nullptr) return nullptr;
-        Node* leftmost = root;
-        while(leftmost->left) {
-            Node* head = leftmost;
+        Node* head = root;
+
+        while(head) {
+            Node* temp = new Node(0);
+            Node* node = temp;
             while(head) {
-                head->left->next = head->right;
-                if(head->next) { head->right->next = head->next->left; }
+                if(head->left) {
+                    node->next = head->left;
+                    node = node->next;
+                }
+                if(head->right){
+                    node->next = head->right;
+                    node = node->next;
+                }
                 head = head->next;
             }
-            leftmost = leftmost->left;
+            head = temp->next;
         }
+
         return root;
     }
-    
     Node* connect0(Node* root) {
-        if(root==nullptr) return nullptr;
+        if(root == nullptr) return nullptr;
+        
         std::queue<Node*> queue;
         queue.push(root);
         while(not queue.empty()) {
             int s = queue.size();
             while(s) {
                 Node* front = queue.front(); queue.pop();
-                if(front->left) { queue.push(front->left); }
-                if(front->right) { queue.push(front->right); }
+                if(front->left) queue.push(front->left);
+                if(front->right) queue.push(front->right);
                 s--;
-                if(s) front->next = queue.front();
-                else front->next = nullptr;
+                if(s) { front->next = queue.front(); }
+                else { front->next = nullptr; }
             }
         }
         return root;
