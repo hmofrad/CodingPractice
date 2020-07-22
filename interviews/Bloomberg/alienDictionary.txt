@@ -1,0 +1,29 @@
+
+
+int main() {
+    vector<string> alphabet = {"a", "b", "c", "ch", "d", "dd", "e", "f", "ff", "g", "ng", "h", "i", "l", "ll", "m", "n", "o", "p", "ph", "r", "rh", "s", "t", "th", "u", "w", "y"};
+vector<string> input = {"dd r",  "n a h", "d e a", "dd", "ng a h"};
+vector<string> output;
+    
+    std::map<std::string, int> map;
+    for(int i = 0; i < alphabet.size(); i++) { map[alphabet[i]] = i; }
+    
+    std::vector<std::vector<int>> v(input.size());
+    for(int i = 0; i < input.size(); i++) {
+        printf("%d ", i);
+        istringstream ss(input[i]);
+        string curr;
+        while(ss >> curr) { printf("%s ", curr.c_str()); v[i].push_back(map[curr]); }
+        printf("\n");
+    }
+    std::sort(v.begin(), v.end());
+    for(int i = 0; i < v.size(); i++) {
+        std::string temp;
+        for(int& w: v[i]) {
+            temp += alphabet[w];
+        }
+        output.push_back(temp);
+    }
+    
+    for(std::string& out: output) printf("%s ", out.c_str()); printf("\n");
+}
